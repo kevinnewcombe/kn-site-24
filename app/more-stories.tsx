@@ -8,14 +8,12 @@ function PostPreview({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: {
   title: string;
   coverImage: any;
   date: string;
   excerpt: string;
-  author: any;
   slug: string;
 }) {
   return (
@@ -32,7 +30,6 @@ function PostPreview({
         <DateComponent dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      {author && <Avatar name={author.name} picture={author.picture} />}
     </div>
   );
 }
@@ -50,7 +47,6 @@ export default function MoreStories({ morePosts }: { morePosts: any[] }) {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
           />

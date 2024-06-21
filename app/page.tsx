@@ -41,14 +41,12 @@ function HeroPost({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: {
   title: string;
   coverImage: any;
   date: string;
   excerpt: string;
-  author: any;
   slug: string;
 }) {
   return (
@@ -69,7 +67,6 @@ function HeroPost({
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          {author && <Avatar name={author.name} picture={author.picture} />}
         </div>
       </div>
     </section>
@@ -90,7 +87,6 @@ export default async function Page() {
           title={heroPost.title}
           coverImage={heroPost.coverImage}
           date={heroPost.date}
-          author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
         />
