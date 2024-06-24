@@ -1,11 +1,23 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
-import { EXAMPLE_PATH, CMS_NAME } from "@/lib/constants";
-
+import "./base.scss";
+import { Fira_Sans, Mulish } from 'next/font/google'
 export const metadata = {
-  title: `Kevin Newcombe's site`,
+  title: `Kevin Newcombe`,
   description: `Kevin Newcombe, Front-end developer`,
 };
+
+const firaSans = Fira_Sans({
+  weight: ['500', '600'],
+  subsets: ['latin'], 
+  variable: '--font-firasans',
+});
+
+
+const mulish = Mulish({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-mulish',
+});
 
 export default function RootLayout({
   children,
@@ -14,7 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      
+      <body className={ `${firaSans.variable} ${mulish.variable}` }>
           <main>{children}</main>
       </body>
     </html>

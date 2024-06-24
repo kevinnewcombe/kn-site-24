@@ -1,8 +1,11 @@
 :root{
   --transition: 0.125s;
+  
+  // colors
+  --color-anchor:  #0068d7;
+  --color-anchor-hover:  #0054ae;
 
-  --anchor-color:  #27d4ff;
-  --anchor-color-hover:  #1DB954;
+  /* 
   --highlight-text: #ccffd2;
 
   // colors
@@ -32,7 +35,7 @@
   
   // font sizes
 
-
+  */
   // spacing
   --space-1: 4px;
   --space-2: 8px;
@@ -48,9 +51,11 @@
   --transition-duration: 0.25s;
 
   // sizes
-  --padding-4: var(--space-4); // used for padding on main components (taskpanel, board)
-  --padding-3: var(--space-3); 
   --padding-2: var(--space-2); 
+  --padding-3: var(--space-3); 
+  --padding-4: var(--space-4); 
+
+
 
   @media(prefers-color-scheme: light){
     // todo

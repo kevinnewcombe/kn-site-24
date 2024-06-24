@@ -1,13 +1,20 @@
 import './header.scss'
+import Link from 'next/link';
 
 /**
- * Header description goes here
+ * Site Header
  */
 
-export const Header: React.FC<{props}>= ({props}) => {
+export const Header: React.FC<{}>= () => {
   return (
     <div className="header">
-      This is Header 
+      <Link href="/" className="header__logo"><img src="/images/logo-full.svg" alt="Kevin Newcombe"/></Link>
+      <nav className="header__nav">
+        <ul>
+          <li><Link href="/posts">Articles</Link></li>
+          <li><Link href="/portfolio">Portfolio</Link></li>
+        </ul>
+      </nav>
     </div>
   );
 }
