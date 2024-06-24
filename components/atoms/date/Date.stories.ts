@@ -17,10 +17,5 @@ export const Default: Story = {
   args: {
     dateString: 'July 1, 2020'
   },
-  argTypes: {
-    example: {
-      description: "Description for 'Example' arg"
-    }
-  }
 };
 

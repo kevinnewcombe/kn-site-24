@@ -11,8 +11,10 @@ const POST_GRAPHQL_FIELDS = `
           sys {
             id
           }
+          width
+          height
           url
-          description
+          description,
         }
       }
     }
