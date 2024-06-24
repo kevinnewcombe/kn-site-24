@@ -4,6 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "plop": "plop",
     "setup": "node ./lib/setup.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -12,6 +13,8 @@
     "@contentful/live-preview": "^4.2.3",
     "@contentful/rich-text-react-renderer": "^15.17.1",
     "@contentful/rich-text-types": "^16.2.1",
+    "@storybook/addon-a11y": "^8.1.10",
+    "@storybook/addon-storysource": "^8.1.10",
     "@tailwindcss/typography": "0.5.9",
     "@types/node": "^20.5.0",
     "@types/react": "^18.2.20",
@@ -36,6 +39,7 @@
     "@storybook/nextjs": "^8.1.10",
     "@storybook/react": "^8.1.10",
     "@storybook/test": "^8.1.10",
+    "plop": "^4.0.1",
     "sass": "^1.77.6",
     "storybook": "^8.1.10"
   }
