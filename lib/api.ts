@@ -1,9 +1,6 @@
 const POST_GRAPHQL_FIELDS = `
   slug
   title
-  coverImage {
-    url
-  }
   date
   excerpt
   content {
@@ -63,6 +60,7 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
   return extractPost(entry);
 }
 
+
 export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `query {
@@ -78,6 +76,31 @@ export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
   );
   return extractPostEntries(entries);
 }
+
+
+
+export async function getPost(
+  slug: string,
+  preview: boolean,
+): Promise<any> {
+  const entry = await fetchGraphQL(
+    `query {
+      postCollection(where: { slug: "${slug}" }, preview: ${
+        preview ? "true" : "false"
+      }, limit: 1) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview,
+  );
+  return {
+    post: extractPost(entry),
+  };
+}
+
+
 
 export async function getPostAndMorePosts(
   slug: string,

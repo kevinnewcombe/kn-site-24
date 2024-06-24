@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const Header: React.FC<{}>= () => {
   return (
-    <div className="header">
+    <header className="header">
       <Link href="/" className="header__logo"><img src="/images/logo-full.svg" alt="Kevin Newcombe"/></Link>
       <nav className="header__nav">
         <ul>
@@ -15,7 +15,7 @@ export const Header: React.FC<{}>= () => {
           <li><Link href="/portfolio">Portfolio</Link></li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 

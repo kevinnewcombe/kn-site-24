@@ -1,5 +1,7 @@
 import "./base.scss";
 import { Fira_Sans, Mulish } from 'next/font/google'
+import Header from "@/components/base/header/Header";
+import Footer from '@/components/base/footer/Footer';
 export const metadata = {
   title: `Kevin Newcombe`,
   description: `Kevin Newcombe, Front-end developer`,
@@ -26,9 +28,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      
       <body className={ `${firaSans.variable} ${mulish.variable}` }>
+        <Header />
           <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

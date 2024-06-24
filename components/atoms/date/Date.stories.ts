@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Header from './Header';
+import Date from './Date';
 
-const meta: Meta<typeof Header> = {
-  title: 'Header',
-  component: Header,
+const meta: Meta<typeof Date> = {
+  title: 'Atoms/Date',
+  component: Date,
   tags: ['autodocs'],
+
 };
 
 export default meta;
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof Date>;
 
 export const Default: Story = {
-  name: 'Header',
+  name: 'Date',
   args: {
-    // Add args here
+    dateString: 'July 1, 2020'
   },
   argTypes: {
     example: {

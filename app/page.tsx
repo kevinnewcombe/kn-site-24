@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { draftMode } from "next/headers";
-import Header from "@/components/header/Header";
+
 
 import Date from "./date";
 import CoverImage from "./cover-image";
@@ -18,8 +18,7 @@ export default async function Page() {
 
   return (
     <>
-      <Header />
-      
+      This is the homepage
     </>
   );
 }
