@@ -6,7 +6,7 @@
   padding: var(--space-5) var(--space-3);
   text-align: center;
   @media #{$mq-min-md}{
-    padding: var(--space-10);
+    padding: var(--space-10) 0;
     text-align: unset;
     display: flex;
     align-items: center;
@@ -15,6 +15,7 @@
   &__logo{
     flex: 1;
   }
+
   img{
     width: min( 100%, 200px );
   }

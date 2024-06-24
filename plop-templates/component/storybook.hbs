@@ -14,9 +14,9 @@ type Story = StoryObj<typeof {{ name }}>;
 export const Default: Story = {
   name: '{{ name }}',
   args: {
-    // Add args here
+    // Add default values here
   },
-  argTypes: {
+  argTypes: { // https://storybook.js.org/docs/api/arg-types
     example: {
       description: "Description for 'Example' arg"
     }

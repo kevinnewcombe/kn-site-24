@@ -7,6 +7,8 @@ interface Asset {
   };
   url: string;
   description: string;
+  width: number;
+  height: number;
 }
 
 interface AssetLink {
@@ -25,6 +27,7 @@ interface Content {
 export const Post: React.FC<{title:string, date:string, content:Content}>= ({title, date, content}) => {
   return (
     <article className="post">
+      {/* { JSON.stringify( content ) } */}
       <h1>{title}</h1>
       <DateComponent dateString={ date} />
       <Markdown content={content} />

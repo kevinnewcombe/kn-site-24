@@ -11,7 +11,7 @@ export default function (plop) {
       {
         type: 'input',
         name: 'subfolder',
-        message: 'Enter (optional) subfolder'
+        message: 'Enter (optional) subfolder. Include a trailing slash'
       },
     ],
   
