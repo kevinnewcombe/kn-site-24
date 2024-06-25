@@ -15,7 +15,8 @@ type Story = StoryObj<typeof Date>;
 export const Default: Story = {
   name: 'Date',
   args: {
-    dateString: 'July 1, 2020'
+    dateString: 'October 31, 2000',
+    textFormat: 'LLLL d, yyyy'
   },
 };
 

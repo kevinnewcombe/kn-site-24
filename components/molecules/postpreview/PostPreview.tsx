@@ -17,7 +17,7 @@ export const PostPreview: React.FC<{
       <Link className="postpreview__name" href={`/posts/${slug}`}>
         {title}
       </Link>
-      <DateComponent dateString={date} textFormat="LLLLd, yyyy" />
+      <DateComponent dateString={date} textFormat="LLLL d, yyyy" />
       <span className="postpreview__excerpt">{excerpt}</span>
     </p>
   );
