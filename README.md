@@ -7,3 +7,6 @@ Next.js + Storybook + Contentful
 * `npm run start` serves the most recent Next.js build
 * `npm run storybook` starts the Storybook development server
 * `plop` creates a new element
+
+## File Structure
+* The components folder should be organized according to [atomic design conventions](https://bradfrost.com/blog/post/atomic-design-and-storybook/)
