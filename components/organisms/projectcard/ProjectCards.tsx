@@ -6,12 +6,11 @@ import DateComponent from '@/components/atoms/date/Date';
 /**
  * Card layout for projects
  */
-
 const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
   return (
     <div className="projectcards">
       {projects.map((project, index) => (
-        <a className="projectcards__card" key={index} tabIndex={0}>
+        <a href={ project.url } className="projectcards__card" key={index} tabIndex={0}>
           <Image
             src={project.screenshot.url}
             alt={project.screenshot.description}

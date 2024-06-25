@@ -26,8 +26,6 @@ export async function generateMetadata({
   }
 }
 
-
-
 export default async function PostPage({
   params,
 }: {

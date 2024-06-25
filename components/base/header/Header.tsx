@@ -12,7 +12,7 @@ export const Header: React.FC<{}>= () => {
       <nav className="header__nav">
         <ul>
           <li><Link href="/posts">Articles</Link></li>
-          <li><Link href="/portfolio">Portfolio</Link></li>
+          {/* <li><Link href="/portfolio">Portfolio</Link></li> */}
         </ul>
       </nav>
     </header>

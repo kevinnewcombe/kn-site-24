@@ -1,5 +1,5 @@
 import "./base.scss";
-import { Fira_Sans, Mulish } from 'next/font/google'
+import { Fira_Sans, Mulish, IBM_Plex_Mono } from 'next/font/google'
 import Header from "@/components/base/header/Header";
 import Footer from '@/components/base/footer/Footer';
 export const metadata = {
@@ -20,6 +20,9 @@ const mulish = Mulish({
   style: ['normal', 'italic'],
   variable: '--font-mulish',
 });
+
+
+
 
 export default function RootLayout({
   children,

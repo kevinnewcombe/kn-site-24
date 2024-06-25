@@ -4,7 +4,7 @@ import Link from 'next/link';
  * Site Footer
  */
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <nav className="footer__nav">
