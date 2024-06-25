@@ -30,6 +30,7 @@ const POST_GRAPHQL_FIELDS = `
   }
 `;
 
+
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -55,6 +56,10 @@ function extractPost(fetchResponse: any): any {
 
 function extractPostEntries(fetchResponse: any): any[] {
   return fetchResponse?.data?.postCollection?.items;
+}
+
+function extractProjectEntries(fetchResponse: any): any[] {
+  return fetchResponse?.data?.projectCollection?.items;
 }
 
 export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
@@ -88,6 +93,30 @@ export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
   return extractPostEntries(entries);
 }
 
+
+export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
+  const entries = await fetchGraphQL(
+    `
+      query{
+        projectCollection(limit: 10) {
+          items{
+            name,
+            url,
+            date,
+            role,
+            description,
+            screenshot{
+              url,
+              width,
+              height
+            }
+          }
+        }
+      }    
+    `,
+  );
+  return extractProjectEntries(entries);
+}
 
 
 export async function getPost(

@@ -1,9 +1,5 @@
-import Link from "next/link";
 import { draftMode } from "next/headers";
-import DateComponent from "@/app/date";
 import Post from "@/components/templates/post/Post";
-
-import { Markdown } from "@/lib/markdown";
 import { getAllPosts, getPost } from "@/lib/api";
 
 
