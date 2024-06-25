@@ -6,7 +6,7 @@ import { format } from "date-fns";
 
 export const DateComponent: React.FC<{dateString: string }>= ({dateString}) => {
   return (
-    <time dateTime={dateString}>
+    <time className="date" dateTime={dateString}>
       {format(new Date(dateString), "LLLL	d, yyyy")}
     </time>
   );

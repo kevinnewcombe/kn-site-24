@@ -15,7 +15,7 @@ const firaSans = Fira_Sans({
 
 
 const mulish = Mulish({
-  weight: ['400', '500'],
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-mulish',

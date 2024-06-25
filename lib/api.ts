@@ -6,6 +6,15 @@ const POST_GRAPHQL_FIELDS = `
   content {
     json
     links {
+      entries {
+
+        inline {
+        
+          sys {
+            id
+          }
+        }
+      }
       assets {
         block {
           sys {
@@ -14,7 +23,7 @@ const POST_GRAPHQL_FIELDS = `
           width
           height
           url
-          description,
+          description
         }
       }
     }

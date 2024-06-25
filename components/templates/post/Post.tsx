@@ -21,15 +21,17 @@ interface Content {
     assets: AssetLink;
   };
 }
+
 /**
  * A full blog post
  */
 export const Post: React.FC<{title:string, date:string, content:Content}>= ({title, date, content}) => {
   return (
     <article className="post">
-      {/* { JSON.stringify( content ) } */}
-      <h1>{title}</h1>
-      <DateComponent dateString={ date} />
+      <div className="post__headline">
+        <h1 className="post__title">{title}</h1>
+        <DateComponent dateString={ date} />
+      </div>
       <Markdown content={content} />
     </article>
   );

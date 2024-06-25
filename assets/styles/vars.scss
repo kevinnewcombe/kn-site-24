@@ -4,39 +4,13 @@
   // colors
   --color-anchor:  #0068d7;
   --color-anchor-hover:  #0054ae;
+  --color-primary-text: #222;
+  --color-secondary-text: #666;
+
   --color-border: #d7d7d7;
-  /* 
-  --highlight-text: #ccffd2;
-
-  // colors
-  --color-page-bg: #292c31;
-  --color-primary-text: #fff;
-  --color-border: #777;
-  --color-card-bg: #292e35;
-  --color-card-bg-focus: #444651;
-  --color-card-bg-active: #2d2d2d;
-  --color-card-border: #555;
-
-  --color-focus-bg: rgba(39, 212, 255, 0.1);
-  --color-focus-outline:  #27d4ff;
-
-  // Buttons
-  --button-light: #fbfbfb;
-  --button-focus: #d5f7ff;
+  --color-bg-surface: #eee;
+  --color-bg-surface-secondary: #f7f7f7;
   
-  // Inputs
-  --input-bg: #fff;
-  --input-border: #919191;
-  --input-focus: #27d4ff;
-  --input-focus-bg: #222737;
-  
-  --color-success:#ccffd2;
-  --color-error:#ff9c9c;
-  
-  // font sizes
-
-  */
-
   // sizes
   --size-page-width: 1200px;
 
@@ -58,8 +32,6 @@
   --padding-2: var(--space-2); 
   --padding-3: var(--space-3); 
   --padding-4: var(--space-4); 
-
-
 
   @media(prefers-color-scheme: light){
     // todo
