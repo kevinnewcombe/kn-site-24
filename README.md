@@ -6,6 +6,7 @@ Next.js + Storybook + Contentful
 * `npm run build` builds the Next.js project
 * `npm run start` serves the most recent Next.js build
 * `npm run storybook` starts the Storybook development server
+* `npm run chromatic` creates a new Storybook build on Chromatic
 * `plop` creates a new element
 
 ## File Structure
