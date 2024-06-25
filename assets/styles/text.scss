@@ -1,8 +1,16 @@
 @use './helpers.scss';
 
 h1{
+  margin:0;
   font-size: helpers.rem(36);
   font-weight: 700;
+}
+
+h3{
+  margin:0;
+  font-size: helpers.rem(24);
+  font-weight: 700;
+  line-height: 1.33;
 }
 
 a{
@@ -20,6 +28,7 @@ p{
   font-size: helpers.rem(18);
   line-height: 1.5;
 }
+
 code{
   padding: var(--space-4);
   white-space: pre-wrap;

@@ -1,0 +1,29 @@
+@use "/assets/styles/helpers";
+
+.projectcards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-10);
+  &__card{
+    color: var(--color-text-primary);
+    cursor: pointer;
+    border-radius: 2px;
+    overflow: hidden;
+    grid-column: span 1;
+    grid-template-rows: subgrid; 
+
+    &:hover, &:focus{
+      background: #ebf5ff;
+      color: var(--color-text-primary);
+      text-decoration: none;
+    }
+  }
+  &__content{
+    display: inline-block;
+    padding: var(--space-2);
+  }
+
+  &__subtitle{
+    font-size: helpers.rem(14);
+  }
+} 

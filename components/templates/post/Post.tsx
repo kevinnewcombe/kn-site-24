@@ -29,7 +29,7 @@ export const Post: React.FC<{title:string, date:string, content:Content}>= ({tit
   return (
     <article className="post">
       <div className="post__headline">
-        <h1 className="post__title">{title}</h1>
+        <h1>{title}</h1>
         <DateComponent dateString={ date} />
       </div>
       <Markdown content={content} />

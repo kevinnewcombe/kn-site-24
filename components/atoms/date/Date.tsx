@@ -4,10 +4,10 @@ import { format } from "date-fns";
  * Date description goes here
  */
 
-export const DateComponent: React.FC<{dateString: string }>= ({dateString}) => {
+export const DateComponent: React.FC<{dateString: string, textFormat:string}>= ({dateString, textFormat = "LLLL	d, yyyy"}) => {
   return (
     <time className="date" dateTime={dateString}>
-      {format(new Date(dateString), "LLLL	d, yyyy")}
+      {format(new Date(dateString), textFormat)}
     </time>
   );
 }

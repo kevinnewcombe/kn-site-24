@@ -98,7 +98,7 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `
       query{
-        projectCollection(limit: 10) {
+        projectCollection(limit: 10, order: date_DESC) {
           items{
             name,
             url,
@@ -108,7 +108,8 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
             screenshot{
               url,
               width,
-              height
+              height,
+              description
             }
           }
         }
