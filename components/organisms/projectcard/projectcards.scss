@@ -10,6 +10,10 @@
     cursor: pointer;
     border-radius: 2px;
     overflow: hidden;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    grid-gap: 0;
 
     &:hover, &:focus{
       background: #ebf5ff;
@@ -18,8 +22,11 @@
     }
   }
   &__content{
-    display: inline-block;
+    display: grid;
     padding: var(--space-5);
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    
   }
 
   &__subtitle{
