@@ -1,10 +1,21 @@
 import "./base.scss";
-import { Fira_Sans, Mulish, IBM_Plex_Mono } from 'next/font/google'
-import Header from "@/components/base/header/Header";
-import Footer from '@/components/base/footer/Footer';
+import { Fira_Sans, Mulish } from 'next/font/google'
+import Header from "@/components/organisms/header/Header";
+import Footer from '@/components/organisms/footer/Footer';
+
 export const metadata = {
   title: `Kevin Newcombe`,
   description: `Kevin Newcombe, Front-end developer`,
+  openGraph: {
+    images: [
+      { 
+        url: '/images/logo-open-graph.jpg',
+        width: 1200,
+        height: 630,
+      }
+    ],
+    title: 'Kevin Newcombe, Front-end developer',
+  },
 };
 
 const firaSans = Fira_Sans({
@@ -12,7 +23,6 @@ const firaSans = Fira_Sans({
   subsets: ['latin'], 
   variable: '--font-firasans',
 });
-
 
 const mulish = Mulish({
   weight: ['400', '500', '600', '700'],

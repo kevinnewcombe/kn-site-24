@@ -2,4 +2,19 @@
 
 .pageintro{
   margin-bottom: var(--space-20);
+  position: relative;
+  p{
+    font-size: helpers.rem(20);
+    line-height: 1.66;
+  }
+  &:after{
+    position: absolute;
+    bottom: calc( -1 * var(--space-10));
+    left:0;
+    width: 100px;
+    height: 1px;
+    display:block;
+    content:'';
+    background: var(--color-border-secondary);
+  }
 }

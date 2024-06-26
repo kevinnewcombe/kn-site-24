@@ -98,7 +98,9 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
   const entries = await fetchGraphQL(
     `
       query{
-        projectCollection(limit: 10, order: date_DESC) {
+        projectCollection(limit: 10, order: date_DESC,  preview: ${
+          isDraftMode ? "true" : "false"
+        }) {
           items{
             name,
             url,
@@ -114,7 +116,7 @@ export async function getAllProjects(isDraftMode: boolean): Promise<any[]> {
           }
         }
       }    
-    `,
+    `
   );
   return extractProjectEntries(entries);
 }

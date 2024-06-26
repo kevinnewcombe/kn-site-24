@@ -1,15 +1,24 @@
 @use './helpers.scss';
 
-h1{
+h1, h2, h3{
+  color: var(--color-headline-text);
   margin:0;
-  font-size: helpers.rem(36);
   font-weight: 700;
 }
 
-h3{
-  margin:0;
-  font-size: helpers.rem(24);
+h1{
+  font-size: helpers.rem(40);
   font-weight: 700;
+}
+
+h2{
+  font-size: helpers.rem(28);
+  line-height: 1.33;
+}
+
+
+h3{
+  font-size: helpers.rem(20);
   line-height: 1.33;
 }
 
@@ -25,12 +34,12 @@ a{
 }
 
 p{
-  font-size: helpers.rem(18);
+  font-size: helpers.rem(16);
   line-height: 1.5;
 }
 
 code{
-  padding: var(--space-4);
+  padding: var(--space-5);
   white-space: pre-wrap;
   background: var(--color-bg-surface-secondary);
   display: inline-block;

@@ -8,7 +8,7 @@ import './pageintro.scss'
 const PageIntro: React.FC<{title:string, children:ReactNode}>= ({title, children}) => {
   return (
     <div className="pageintro">
-      <h1>{ title }</h1>
+      <h1 className="pageintro__title">{ title }</h1>
       { children }
     </div>
   );

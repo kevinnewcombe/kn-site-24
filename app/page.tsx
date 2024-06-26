@@ -14,6 +14,8 @@ export default async function Page() {
           links, like, anywhere else on this page (can't miss 'em.)
         </p>
       </PageIntro>
+
+      <h2>Projects</h2>
       <ProjectCards projects={allProjects} />
     </>
   );

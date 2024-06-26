@@ -23,7 +23,7 @@
     ul {
       padding:0;
       list-style-type: none;
-      gap: var(--space-4);
+      gap: var(--space-5);
       @media #{$mq-min-md}{
         display: flex;
       }
@@ -35,7 +35,7 @@
       font-family: var(--font-firasans), serif;
       font-size: helpers.rem(20);
       font-weight: 600;
-      padding: var(--space-2);
+      padding: var(--space-3);
       @media #{$mq-min-md}{
 
       }

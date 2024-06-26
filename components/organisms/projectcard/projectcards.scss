@@ -4,13 +4,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-10);
+  margin-top: var(--space-5);
   &__card{
     color: var(--color-text-primary);
     cursor: pointer;
     border-radius: 2px;
     overflow: hidden;
-    grid-column: span 1;
-    grid-template-rows: subgrid; 
 
     &:hover, &:focus{
       background: #ebf5ff;
@@ -20,7 +19,7 @@
   }
   &__content{
     display: inline-block;
-    padding: var(--space-2);
+    padding: var(--space-5);
   }
 
   &__subtitle{
