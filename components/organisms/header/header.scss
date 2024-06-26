@@ -12,20 +12,18 @@
     align-items: center;
   }
 
-  &__logo{
-    flex: 1;
-  }
-
   img{
     width: min( 100%, 200px );
+    height: auto;
   }
-  &__nav{
+  &__nav{        
+    flex: 1;
     ul {
       padding:0;
       list-style-type: none;
       gap: var(--space-5);
       @media #{$mq-min-md}{
-        display: flex;
+        text-align: right;
       }
     }
     li{

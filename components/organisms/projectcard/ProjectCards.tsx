@@ -10,7 +10,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
   return (
     <div className="projectcards">
       {projects.map((project, index) => (
-        <a href={ project.url } className="projectcards__card" key={index} tabIndex={0}>
+        <a href={ project.url } className="projectcards__card" key={index} >
           <Image
             src={project.screenshot.url}
             alt={project.screenshot.description}

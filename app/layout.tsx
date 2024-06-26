@@ -6,6 +6,7 @@ import Footer from '@/components/organisms/footer/Footer';
 export const metadata = {
   title: `Kevin Newcombe`,
   description: `Kevin Newcombe, front-end developer`,
+  metadataBase: new URL(`${process.env.VERCEL_URL}`),
   openGraph: {
     images: [
       { 
