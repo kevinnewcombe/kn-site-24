@@ -5,7 +5,7 @@ import Footer from '@/components/organisms/footer/Footer';
 
 export const metadata = {
   title: `Kevin Newcombe`,
-  description: `Kevin Newcombe, Front-end developer`,
+  description: `Kevin Newcombe, front-end developer`,
   openGraph: {
     images: [
       { 
@@ -14,7 +14,7 @@ export const metadata = {
         height: 630,
       }
     ],
-    title: 'Kevin Newcombe, Front-end developer',
+    description: 'The portfolio of Kevin Newcombe, front-end developer',
   },
 };
 

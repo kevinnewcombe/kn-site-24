@@ -6,7 +6,6 @@ import { getAllPosts, getPost } from "@/lib/api";
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false);
-
   return allPosts.map((post) => ({
     slug: post.slug,
   }));
@@ -20,9 +19,15 @@ export async function generateMetadata({
 
   const { isEnabled } = draftMode();
   const { post } = await getPost(params.slug, isEnabled);
-  
+  console.log(post.date);
   return {
-    title: `${post.title} | Kevin Newcombe`  
+    title: `${post.title} | Kevin Newcombe`,
+    openGraph: {
+      title: `${post.title} | Kevin Newcombe`,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date
+    }
   }
 }
 
