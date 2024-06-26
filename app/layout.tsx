@@ -32,9 +32,6 @@ const mulish = Mulish({
   variable: '--font-mulish',
 });
 
-
-
-
 export default function RootLayout({
   children,
 }: {
