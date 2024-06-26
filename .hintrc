@@ -1,0 +1,4 @@
+{
+  "extends": ["development"],
+  "browserslist": ["> 10%", "last 2 versions"]
+}
