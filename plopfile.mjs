@@ -6,15 +6,14 @@ export default function (plop) {
       {
         type: 'input',
         name: 'name',
-        message: 'Enter component name in TitleCase'
+        message: 'Enter component name in TitleCase: '
       },
       {
         type: 'input',
         name: 'subfolder',
-        message: 'Enter (optional) subfolder. Include a trailing slash'
+        message: 'Enter (optional) subfolder. Include a trailing slash: '
       },
     ],
-  
     actions: [
       {
         type: 'add',

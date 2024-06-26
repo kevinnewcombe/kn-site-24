@@ -7,9 +7,7 @@ const POST_GRAPHQL_FIELDS = `
     json
     links {
       entries {
-
         inline {
-        
           sys {
             id
           }
