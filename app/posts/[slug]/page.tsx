@@ -21,9 +21,8 @@ export async function generateMetadata({
   const { post } = await getPost(params.slug, isEnabled);
 
   return {
-    title: `${post.title} | Kevin Newcombe`,
+    title: post.title,
     openGraph: {
-      title: `${post.title} | Kevin Newcombe`,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date
