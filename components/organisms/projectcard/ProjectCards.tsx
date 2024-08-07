@@ -2,7 +2,8 @@ import './projectcards.scss'
 import { ProjectType } from "@/lib/types";
 import Image from 'next/image';
 import DateComponent from '@/components/atoms/date/Date';
-
+import { storyblokEditable } from "@storyblok/react/rsc";
+import { render } from 'storyblok-rich-text-react-renderer';
 /**
  * Card layout for projects
  */
@@ -11,13 +12,14 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
     <div className="projectcards">
       {projects.map((project, index) => (
         <a href={ project.url } className="projectcards__card" key={index} >
+   
           <Image
-            src={project.screenshot.url}
-            alt={project.screenshot.description}
-            width={project.screenshot.width}
-            height={project.screenshot.height}
-            sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc( 100vw - 20px)" 
-          />
+            src={`${project.screenshot.filename}/m/800x0`}
+            width={800}
+            height={0}
+            alt={project.screenshot.alt}
+            sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)" 
+          /> 
           <span className="projectcards__content">
             <span>
               <h3>{project.name}</h3>
@@ -25,9 +27,9 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
               <span className="projectcards__subtitle">{project.role}</span>
             </span>
             <span>
-              <p>{project.description}</p>
+              {render(project.description)}
             </span>
-          </span>
+          </span> 
         </a>
       ))}
     </div>
@@ -35,3 +37,11 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
 }
 
 export default ProjectCards;
+
+export const ProjectCardsStoryblok: React.FC<{blok:any}>= ({blok}) => {
+  return (
+    <div {...storyblokEditable(blok)}>
+      <ProjectCards projects={blok.projects} />
+    </div>
+  );
+}

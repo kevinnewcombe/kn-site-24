@@ -10,6 +10,7 @@ import Footer from '@/components/organisms/footer/Footer';
 import Page from "@/components/organisms/page/Page";
 import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
+import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
 
 
 storyblokInit({
@@ -19,6 +20,7 @@ storyblokInit({
     page: Page,
     pageIntro: PageIntroStoryblok,
     richText: RichTextStoryblok,
+    projectCards: ProjectCardsStoryblok
   }
 });
 

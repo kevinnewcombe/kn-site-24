@@ -5,9 +5,7 @@ export type ProjectType = {
   role: string,
   description: string,
   screenshot: {
-    url: string,
-    width: number,
-    height: number
-    description: string,
+    filename: string,
+    alt: string,
   }
 }
