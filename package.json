@@ -8,7 +8,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
+    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "dev:proxy": "concurrently \"npm run proxy\" \"npm run dev\""
   },
   "dependencies": {
     "@contentful/live-preview": "^4.2.3",
@@ -41,6 +42,7 @@
     "@storybook/react": "^8.1.10",
     "@storybook/test": "^8.1.10",
     "chromatic": "^11.5.4",
+    "concurrently": "^8.2.2",
     "plop": "^4.0.1",
     "sass": "^1.77.6",
     "storybook": "^8.1.10"

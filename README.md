@@ -4,6 +4,7 @@ Next.js + Storybook + Contentful
 ## Scripts
 * `npm run dev` starts the Next.js server
 * `npm run proxy` starts the https proxy server 
+* `npm run dev:proxy` runs the above two commands in one line
 * `npm run build` builds the Next.js project
 * `npm run start` serves the most recent Next.js build
 * `npm run storybook` starts the Storybook development server

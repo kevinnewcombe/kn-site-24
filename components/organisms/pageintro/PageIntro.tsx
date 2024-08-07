@@ -2,8 +2,6 @@ import { ReactNode } from 'react';
 import './pageintro.scss'
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { render } from 'storyblok-rich-text-react-renderer';
-import { renderRichText } from "@storyblok/react";
-
 /**
  * An introduction section for pages
  */
@@ -16,7 +14,6 @@ const PageIntro: React.FC<{title:string, children:ReactNode}>= ({title, children
     </div>
   );
 }
-
 export default PageIntro;
 
 export const PageIntroStoryblok: React.FC<{blok:any}>= ({blok}) => {
