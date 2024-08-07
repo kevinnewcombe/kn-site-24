@@ -2,9 +2,9 @@
 "use client";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "@/components/organisms/page/Page";
-import Teaser from "../organisms/teaser/Teaser";
-import Feature from "../organisms/feature/Feature";
-import Grid from "../organisms/grid/Grid";
+import Teaser from "@/components/organisms/teaser/Teaser";
+import Feature from "@/components/organisms/feature/Feature";
+import Grid from "@/components/organisms/grid/Grid";
 
 const components = {
   feature: Feature,

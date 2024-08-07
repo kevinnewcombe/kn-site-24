@@ -3,7 +3,7 @@ import { getAllProjects } from "@/lib/api";
 import ProjectCards from "@/components/organisms/projectcard/ProjectCards";
 import PageIntro from "@/components/organisms/pageintro/PageIntro";
 
-import { getStoryblokApi} from "@storyblok/react/rsc";
+import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 
 export default async function Page() {
@@ -11,7 +11,7 @@ export default async function Page() {
   console.log('data', data);
   return (
     <div>
-      <StoryblokStory story={data.story} />
+      <StoryblokComponent blok={data.story.content} />
     </div>
   );
 }

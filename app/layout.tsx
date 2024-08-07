@@ -1,15 +1,27 @@
 
 import "./base.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import StoryblokProvider from "@/components/pages/StoryblokProvider";
+import StoryblokBridgeLoader from "@storyblok/react/bridge-loader";
  
 import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
 
+import Page from "@/components/organisms/page/Page";
+import Teaser from "@/components/organisms/teaser/Teaser";
+import Feature from "@/components/organisms/feature/Feature";
+import Grid from "@/components/organisms/grid/Grid";
+
+
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
-  use: [apiPlugin]
+  use: [apiPlugin],
+  components: {
+    feature: Feature,
+    grid: Grid,
+    page: Page,
+    teaser: Teaser
+  }
 });
 
 export const metadata = {
@@ -48,14 +60,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <StoryblokProvider>
       <html lang="en">
         <body className={ `${firaSans.variable} ${mulish.variable}` }>
           <Header />
             <main>{children}</main>
           <Footer />
         </body>
+        <StoryblokBridgeLoader options={{}} />
       </html>
-    </StoryblokProvider>
   );
 }
