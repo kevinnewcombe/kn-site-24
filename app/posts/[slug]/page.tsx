@@ -1,14 +1,27 @@
-import { draftMode } from "next/headers";
-import Post from "@/components/templates/post/Post";
-import { getAllPosts, getPost } from "@/lib/api";
+import Head from "next/head";
+interface ISbStoriesParams { version: string; }
+import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
+ 
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { data } = await fetchData(params.slug);
+  return (
+    <div>
+      <StoryblokComponent blok={data.story.content} />
+    </div>
+  );
 
+}
 
-
-export async function generateStaticParams() {
-  const allPosts = await getAllPosts(false);
-  return allPosts.map((post) => ({
-    slug: post.slug,
-  }));
+export async function fetchData(slug:string) {
+  
+  let sbParams: import("@storyblok/react/rsc").ISbStoriesParams = { version: "draft" as "draft" | "published" | undefined };
+  
+  const storyblokApi = getStoryblokApi();
+  return storyblokApi.get(`cdn/stories/posts/${slug}`, sbParams, {cache: "no-store"});
 }
 
 export async function generateMetadata({
@@ -16,26 +29,34 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-
-  const { isEnabled } = draftMode();
-  const { post } = await getPost(params.slug, isEnabled);
-
+  const { data } = await fetchData(params.slug);
   return {
-    title: post.title,
-    openGraph: {
-      description: post.excerpt,
-      type: 'article',
-      publishedTime: post.date
-    }
+    title: data.story.name,
   }
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { isEnabled } = draftMode();
-  const { post } = await getPost(params.slug, isEnabled);
-  return <Post title={ post.title } date={ post.date } content={ post.content }/>
+
+export async function generateStaticParams() {
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get("cdn/links/", {
+    version: "draft",
+  });
+
+  let paths = [];
+
+  Object.keys(data.links).forEach((linkKey) => {
+    if (data.links[linkKey].is_folder) {
+      return;
+    }
+    const slug = data.links[linkKey].slug;
+    if (slug == "home") {
+      return;
+    }
+    paths.push({ slug });
+  });
+  console.clear();
+  console.log('paths', paths);
+  return paths;
 }
+

@@ -1,14 +1,11 @@
-import { draftMode } from "next/headers";
 import { getAllProjects } from "@/lib/api";
 import ProjectCards from "@/components/organisms/projectcard/ProjectCards";
 import PageIntro from "@/components/organisms/pageintro/PageIntro";
 
 import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
-import StoryblokStory from "@storyblok/react/story";
 
 export default async function Page() {
   const { data } = await fetchData();
-  console.log('data', data);
   return (
     <div>
       <StoryblokComponent blok={data.story.content} />
@@ -21,7 +18,6 @@ export async function fetchData() {
   const storyblokApi = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/home`, sbParams, {cache: "no-store"});
 }
-  // const { isEnabled } = draftMode();
   // const allProjects = await getAllProjects(isEnabled);
   // return (
   //   <>
