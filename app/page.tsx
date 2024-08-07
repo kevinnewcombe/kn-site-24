@@ -7,9 +7,7 @@ import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
 export default async function Page() {
   const { data } = await fetchData();
   return (
-    <div>
-      <StoryblokComponent blok={data.story.content} />
-    </div>
+    <StoryblokComponent blok={data.story.content} />
   );
 }
 export async function fetchData() {
@@ -18,19 +16,3 @@ export async function fetchData() {
   const storyblokApi = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/home`, sbParams, {cache: "no-store"});
 }
-  // const allProjects = await getAllProjects(isEnabled);
-  // return (
-  //   <>
-  //     <PageIntro title="👋 Hello!">
-  //       <p>
-  //         I'm a front-end developer obsessed with css, accessibility, and
-  //         design systems. Interested in hearing more? Check out one of the
-  //         links, like, anywhere else on this page (can't miss 'em.)
-  //       </p>
-  //     </PageIntro>
-
-  //     <h2>Projects</h2>
-  //     <ProjectCards projects={allProjects} />
-  //   </>
-  // );
-// }

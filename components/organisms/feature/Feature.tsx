@@ -6,7 +6,7 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 
 const Feature: React.FC<{blok:any}>= ({blok}) => {
   return (
-<div  {...storyblokEditable(blok)}>
+  <div {...storyblokEditable(blok)}>
     {blok.name}
   </div>
   );

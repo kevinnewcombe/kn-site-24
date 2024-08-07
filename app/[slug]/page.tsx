@@ -1,4 +1,7 @@
+import Head from "next/head";
+interface ISbStoriesParams { version: string; }
 import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
+ 
 export default async function Page({
   params,
 }: {
@@ -6,17 +9,18 @@ export default async function Page({
 }) {
   const { data } = await fetchData(params.slug);
   return (
-    <StoryblokComponent blok={data.story.content} />
+    <div>
+      <StoryblokComponent blok={data.story.content} />
+    </div>
   );
 
 }
-
 export async function fetchData(slug:string) {
   
   let sbParams: import("@storyblok/react/rsc").ISbStoriesParams = { version: "draft" as "draft" | "published" | undefined };
   
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/posts/${slug}`, sbParams, {cache: "no-store"});
+  return storyblokApi.get(`cdn/stories/${slug}`, sbParams, {cache: "no-store"});
 }
 
 export async function generateMetadata({
@@ -52,4 +56,3 @@ export async function generateStaticParams() {
   });
   return paths;
 }
-

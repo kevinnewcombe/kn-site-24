@@ -5,12 +5,11 @@ import Page from "@/components/organisms/page/Page";
 import Teaser from "@/components/organisms/teaser/Teaser";
 import Feature from "@/components/organisms/feature/Feature";
 import Grid from "@/components/organisms/grid/Grid";
+import PageIntro from "@/components/organisms/pageintro/PageIntro";
 
 const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
-  page: Page,
+
+  PageIntro: PageIntro
 };
 
 storyblokInit({

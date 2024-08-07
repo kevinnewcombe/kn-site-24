@@ -10,6 +10,7 @@ import Footer from '@/components/organisms/footer/Footer';
 import Page from "@/components/organisms/page/Page";
 import Teaser from "@/components/organisms/teaser/Teaser";
 import Feature from "@/components/organisms/feature/Feature";
+import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import Grid from "@/components/organisms/grid/Grid";
 
 
@@ -20,7 +21,8 @@ storyblokInit({
     feature: Feature,
     grid: Grid,
     page: Page,
-    teaser: Teaser
+    teaser: Teaser,
+    pageIntro: PageIntroStoryblok
   }
 });
 
