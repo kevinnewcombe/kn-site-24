@@ -7,12 +7,14 @@
     "plop": "plop",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
     "@contentful/live-preview": "^4.2.3",
     "@contentful/rich-text-react-renderer": "^15.17.1",
     "@contentful/rich-text-types": "^16.2.1",
+    "@storyblok/react": "^3.0.10",
     "@storybook/addon-a11y": "^8.1.10",
     "@storybook/addon-storysource": "^8.1.10",
     "@types/node": "^20.5.0",
