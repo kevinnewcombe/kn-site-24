@@ -26,24 +26,24 @@ export async function generateMetadata({
 
 
 export async function generateStaticParams() {
-  
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
     version: process.env.storyblokPageVersion as "published" | "draft" | undefined,
   });
-
   let paths: { slug: string }[] = [];
-  
+ 
   Object.keys(data.links).forEach((linkKey) => {
     if (data.links[linkKey].is_folder) {
       return;
     }
     const slug = data.links[linkKey].slug;
-    if (slug == "home") {
+    if (slug === "home" || data.links[linkKey].parent_id !== null) {
       return;
     }
-    paths.push({ slug });
+    
+    paths.push({slug: slug});
   });
 
   return paths;
 }
+
