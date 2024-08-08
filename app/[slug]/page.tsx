@@ -1,4 +1,5 @@
-// import { fetchStoryBySlug } from "@/lib/api";
+import { fetchStoryBySlug } from "@/lib/api";
+import { notFound } from 'next/navigation';
 import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
  
 export default async function Page({
@@ -6,38 +7,33 @@ export default async function Page({
 }: {
   params: { slug: string };
 }) {
-  // const { data } = await fetchStoryBySlug(params.slug);
-  return (
-    <div>
-      Hi! This is { params.slug }.
-      {/* <StoryblokComponent blok={data.story.content} /> */}
-    </div>
-  );
-
+  const { data } = await fetchStoryBySlug(params.slug);
+  return !data.error ? <StoryblokComponent blok={data.story.content} /> : null;
 }
-/* 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }) {
   const { data } = await fetchStoryBySlug(params.slug);
+  if(data.error){
+    notFound();
+  }
   return {
-    title: data.story.name,
+    title: data.story.name
   }
 }
-*/
 
 
 export async function generateStaticParams() {
-
+  
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
     version: "draft",
   });
 
-  let paths: { slug: any; }[] = [];
-
+  let paths = [];
+  
   Object.keys(data.links).forEach((linkKey) => {
     if (data.links[linkKey].is_folder) {
       return;
@@ -48,5 +44,6 @@ export async function generateStaticParams() {
     }
     paths.push({ slug });
   });
+
   return paths;
 }

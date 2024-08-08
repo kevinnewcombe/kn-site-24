@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "\"next\"",
+    "dev": "concurrently \"npm run proxy\" \"next\"",
     "next": "next",
     "build": "next build",
     "start": "next start",
