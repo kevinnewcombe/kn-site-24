@@ -32,6 +32,7 @@ export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
     version: process.env.storyblokPageVersion as "published" | "draft" | undefined,
+    starts_with: 'posts/',
   });
 
   let paths: { slug: string }[] = [];
@@ -42,9 +43,6 @@ export async function generateStaticParams() {
     }
     const slug = data.links[linkKey].slug;
    
-    if (!slug.startsWith("posts/")) {
-      return;
-    }
     paths.push({ slug: slug.replace('posts/', '') });
   });
   return paths;
