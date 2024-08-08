@@ -7,7 +7,7 @@ import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
 
-import Page from "@/components/organisms/page/Page";
+import Page from "@/components/templates/page/Page";
 import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
@@ -66,7 +66,7 @@ export default function RootLayout({
             <main>{children}</main>
           <Footer />
         </body>
-        <StoryblokBridgeLoader options={{}} />
+        {/* <StoryblokBridgeLoader options={{}} /> */}
       </html>
   );
 }

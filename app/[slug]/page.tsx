@@ -1,13 +1,12 @@
-import Head from "next/head";
-interface ISbStoriesParams { version: string; }
-import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
+import { fetchStoryBySlug } from "@/lib/api";
+import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
  
 export default async function Page({
   params,
 }: {
   params: { slug: string };
 }) {
-  const { data } = await fetchData(params.slug);
+  const { data } = await fetchStoryBySlug(params.slug);
   return (
     <div>
       <StoryblokComponent blok={data.story.content} />
@@ -15,20 +14,12 @@ export default async function Page({
   );
 
 }
-export async function fetchData(slug:string) {
-  
-  let sbParams: import("@storyblok/react/rsc").ISbStoriesParams = { version: "draft" as "draft" | "published" | undefined };
-  
-  const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/${slug}`, sbParams, {cache: "no-store"});
-}
-
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }) {
-  const { data } = await fetchData(params.slug);
+  const { data } = await fetchStoryBySlug(params.slug);
   return {
     title: data.story.name,
   }
@@ -42,7 +33,7 @@ export async function generateStaticParams() {
     version: "draft",
   });
 
-  let paths = [];
+  let paths: { slug: any; }[] = [];
 
   Object.keys(data.links).forEach((linkKey) => {
     if (data.links[linkKey].is_folder) {
