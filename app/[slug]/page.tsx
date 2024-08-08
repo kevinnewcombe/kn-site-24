@@ -1,4 +1,4 @@
-import { fetchStoryBySlug } from "@/lib/api";
+// import { fetchStoryBySlug } from "@/lib/api";
 import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
  
 export default async function Page({
@@ -6,14 +6,16 @@ export default async function Page({
 }: {
   params: { slug: string };
 }) {
-  const { data } = await fetchStoryBySlug(params.slug);
+  // const { data } = await fetchStoryBySlug(params.slug);
   return (
     <div>
-      <StoryblokComponent blok={data.story.content} />
+      Hi! This is { params.slug }.
+      {/* <StoryblokComponent blok={data.story.content} /> */}
     </div>
   );
 
 }
+/* 
 export async function generateMetadata({
   params,
 }: {
@@ -24,6 +26,7 @@ export async function generateMetadata({
     title: data.story.name,
   }
 }
+*/
 
 
 export async function generateStaticParams() {
