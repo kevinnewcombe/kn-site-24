@@ -1,7 +1,28 @@
+
 import "./base.scss";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import StoryblokBridgeLoader from "@storyblok/react/bridge-loader";
+ 
 import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
+
+import Page from "@/components/templates/page/Page";
+import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
+import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
+import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
+
+
+storyblokInit({
+  accessToken: process.env.storyblokApiToken,
+  use: [apiPlugin],
+  components: {
+    page: Page,
+    pageIntro: PageIntroStoryblok,
+    richText: RichTextStoryblok,
+    projectCards: ProjectCardsStoryblok
+  }
+});
 
 export const metadata = {
   title: `Kevin Newcombe`,
@@ -18,6 +39,7 @@ export const metadata = {
     description: 'The portfolio of Kevin Newcombe, front-end developer',
   },
 };
+
 
 const firaSans = Fira_Sans({
   weight: ['500', '600'],
@@ -38,12 +60,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={ `${firaSans.variable} ${mulish.variable}` }>
-        <Header />
-          <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+      <html lang="en">
+        <body className={ `${firaSans.variable} ${mulish.variable}` }>
+          <Header />
+            <main>{children}</main>
+          <Footer />
+        </body>
+        {/* <StoryblokBridgeLoader options={{}} /> */}
+      </html>
   );
 }

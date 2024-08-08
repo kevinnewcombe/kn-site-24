@@ -5,8 +5,12 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.ctfassets.net',
+        hostname: 'a.storyblok.com',
       },
     ],
+  },
+  env: {
+    storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
+    storyblokPageVersion: process.env.STORYBLOK_PAGE_VERSION
   },
 };

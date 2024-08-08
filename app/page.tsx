@@ -1,22 +1,13 @@
-import { draftMode } from "next/headers";
-import { getAllProjects } from "@/lib/api";
-import ProjectCards from "@/components/organisms/projectcard/ProjectCards";
-import PageIntro from "@/components/organisms/pageintro/PageIntro";
+import { fetchStoryBySlug } from "@/lib/api";
+import { StoryblokComponent } from "@storyblok/react/rsc";
+import { notFound } from 'next/navigation';
 export default async function Page() {
-  const { isEnabled } = draftMode();
-  const allProjects = await getAllProjects(isEnabled);
+  const { data } = await fetchStoryBySlug('home');
+  if(data.error){
+    notFound();
+  }
   return (
-    <>
-      <PageIntro title="👋 Hello!">
-        <p>
-          I'm a front-end developer obsessed with css, accessibility, and
-          design systems. Interested in hearing more? Check out one of the
-          links, like, anywhere else on this page (can't miss 'em.)
-        </p>
-      </PageIntro>
-
-      <h2>Projects</h2>
-      <ProjectCards projects={allProjects} />
-    </>
+      <StoryblokComponent blok={data.story.content} />
   );
 }
+
