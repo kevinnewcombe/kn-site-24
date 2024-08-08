@@ -8,6 +8,7 @@ import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
 
 import Page from "@/components/templates/page/Page";
+import { PostStoryblok } from "@/components/templates/post/Post";
 import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
@@ -18,6 +19,7 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     page: Page,
+    post: PostStoryblok,
     pageIntro: PageIntroStoryblok,
     richText: RichTextStoryblok,
     projectCards: ProjectCardsStoryblok

@@ -1,40 +1,32 @@
-import './post.scss'
+
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { ReactNode } from 'react';
 import DateComponent from '@/components/atoms/date/Date'
-import { Markdown } from "@/lib/markdown";
-interface Asset {
-  sys: {
-    id: string;
-  };
-  url: string;
-  description: string;
-  width: number;
-  height: number;
-}
+import './post.scss'
 
-interface AssetLink {
-  block: Asset[];
-}
-
-interface Content {
-  json: any;
-  links: {
-    assets: AssetLink;
-  };
-}
 
 /**
  * A full blog post
  */
-export const Post: React.FC<{title:string, date:string, content:Content}>= ({title, date, content}) => {
+export const Post: React.FC<{title:string, date:string, children:ReactNode}>= ({title, date, children}) => {
   return (
     <article className="post">
       <div className="post__headline">
         <h1>{title}</h1>
         <DateComponent dateString={ date } textFormat="LLLL d, yyyy" />
       </div>
-      <Markdown content={content} />
+      { children }
     </article>
   );
 }
-
 export default Post;
+
+export const PostStoryblok: React.FC<{blok:any}>= ({blok}) => {
+  return (
+    <div {...storyblokEditable(blok)}>
+    {blok.body?.map((nestedBlok:any) => (
+      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+    ))}
+  </div>
+  );
+}
