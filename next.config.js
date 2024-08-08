@@ -10,6 +10,7 @@ module.exports = {
     ],
   },
   env: {
-    storyblokApiToken: process.env.STORYBLOK_API_TOKEN
+    storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
+    storyblokPageVersion: process.env.STORYBLOK_PAGE_VERSION
   },
 };

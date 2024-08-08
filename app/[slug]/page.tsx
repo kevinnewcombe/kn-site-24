@@ -29,10 +29,10 @@ export async function generateStaticParams() {
   
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
-    version: "draft",
+    version: process.env.storyblokPageVersion as "published" | "draft" | undefined,
   });
 
-  let paths = [];
+  let paths: { slug: string }[] = [];
   
   Object.keys(data.links).forEach((linkKey) => {
     if (data.links[linkKey].is_folder) {
