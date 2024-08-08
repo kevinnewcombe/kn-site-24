@@ -19,6 +19,7 @@ export default async function Page() {
   return (
     <>
       {data.stories.map((post: PostStoryPreviewProps) => (
+      
         <PostPreview
           key={post.uuid}
           title={post.name}
