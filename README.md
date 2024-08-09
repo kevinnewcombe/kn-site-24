@@ -1,5 +1,5 @@
 # kevin-newcombe.com | site 24
-Next.js + Storybook + Contentful
+Next.js + Storybook + Storyblok
 
 ## Scripts
 * `npm run dev` starts the https proxy server & Next.js server
@@ -10,6 +10,10 @@ Next.js + Storybook + Contentful
 * `npm run storybook` starts the Storybook development server
 * `npm run chromatic` creates a new Storybook build on Chromatic
 * `plop` creates a new element
+
+### Links
+* [Storybook](https://main--667afafd42484f6338eadd40.chromatic.com/)
+* [repo](https://github.com/kevinnewcombe/kn-site-24)
 
 ### Installation
 * Todo: Add something about .env vars here and where to find everything on Storyblok's site
