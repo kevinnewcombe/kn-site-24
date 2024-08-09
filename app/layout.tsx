@@ -12,6 +12,7 @@ import { PostStoryblok } from "@/components/templates/post/Post";
 import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
+import { HtmlEmbedStoryblok } from "@/components/atoms/htmlembed/HtmlEmbed";
 
 
 storyblokInit({
@@ -22,7 +23,8 @@ storyblokInit({
     post: PostStoryblok,
     pageIntro: PageIntroStoryblok,
     richText: RichTextStoryblok,
-    projectCards: ProjectCardsStoryblok
+    projectCards: ProjectCardsStoryblok,
+    htmlEmbed: HtmlEmbedStoryblok
   }
 });
 

@@ -1,4 +1,4 @@
-import { fetchStoryBySlug } from "@/lib/api";
+import { fetchStoryBySlug, pageVersionProps } from "@/lib/api";
 import { notFound } from 'next/navigation';
 import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
  
@@ -28,7 +28,7 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
-    version: process.env.storyblokPageVersion as "published" | "draft" | undefined,
+    version: process.env.storyblokPageVersion as pageVersionProps,
   });
   let paths: { slug: string }[] = [];
  

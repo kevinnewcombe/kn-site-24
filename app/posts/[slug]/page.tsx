@@ -1,6 +1,7 @@
-import { fetchStoryBySlug } from "@/lib/api";
+import { fetchStoryBySlug, pageVersionProps } from "@/lib/api";
 import { notFound } from 'next/navigation';
 import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
+
 import Post from "@/components/templates/post/Post";
  
 export default async function Page({
@@ -10,9 +11,10 @@ export default async function Page({
 }) {
   const { data } = await fetchStoryBySlug(`posts/${params.slug}`);
   return !data.error ? 
-    <Post title={ data.story.name } date={ data.story.published_at }>
+    <Post title={ data.story.name } date={ data.story.published_at } editURL={`${process.env.storyblokPreviewURLBase}${data.story.id}`}>
       <StoryblokComponent blok={data.story.content} /></Post> : null;
 }
+
 export async function generateMetadata({
   params,
 }: {
@@ -31,7 +33,7 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
-    version: process.env.storyblokPageVersion as "published" | "draft" | undefined,
+    version: process.env.storyblokPageVersion as pageVersionProps,
     starts_with: 'posts/',
   });
 
