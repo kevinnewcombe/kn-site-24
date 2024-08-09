@@ -20,6 +20,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
+  notFound();
+  
+  /* 
   const { data } = await fetchStoryBySlug(`posts/${params.slug}`);
   if(data.error){
     notFound();
@@ -27,9 +30,10 @@ export async function generateMetadata({
   return {
     title: data.story.name
   }
+    */
 }
 
-
+/* 
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/", {
@@ -49,3 +53,4 @@ export async function generateStaticParams() {
   });
   return paths;
 }
+*/

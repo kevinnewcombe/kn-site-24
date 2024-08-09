@@ -1,6 +1,6 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import { PostPreview } from "@/components/molecules/postpreview/PostPreview";
-
+import { notFound } from 'next/navigation';
 interface PostStoryPreviewProps {
   name: string;
   uuid: string;
@@ -13,6 +13,8 @@ interface PostStoryPreviewProps {
 
 
 export default async function Page() {
+  notFound();
+  /* 
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories`, {
     version: "published",
@@ -34,5 +36,6 @@ export default async function Page() {
       ))}
     </>
   );
+  */
 
 }
