@@ -15,7 +15,7 @@ type Story = StoryObj<typeof RichText>;
 
 
 export const Default: Story = {
-  name: 'RichText',
+  name: 'Default',
   args: {
     children: <>
       <h1>Lorem ipsum dolor sit amet</h1>

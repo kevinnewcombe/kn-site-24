@@ -22,7 +22,7 @@ export const Default: Story = {
         role: "Development, Design",
         description: "A tool for generating one-line CSS animation values.",
         screenshot: {
-          filename: "https://images.ctfassets.net/tk4rs2ojn89c/1G1tVfbiBulRvSUZtar1p6/032fb4ef4a5366baed5e191691895e99/Screenshot_2024-06-25_at_11.42.51_AM.png",
+          filename: "https://a.storyblok.com/f/299841/552x345/85e37de850/screenshot_2024-06-25_at_2-57-23_pm.png",
           alt: "",
         },
       },
@@ -34,7 +34,7 @@ export const Default: Story = {
         description:
           "A Chain Chomp built in three.js that tries to attack your pointer.",
         screenshot: {
-          filename: "https://images.ctfassets.net/tk4rs2ojn89c/1u2VW0YlGK1XyyY90WTX0i/0f4fcdb89df4d7a58059b55afb0d85dc/Screenshot_2024-06-25_at_11.34.13_AM.png",
+          filename: "https://a.storyblok.com/f/299841/3360x2100/53f1e4b1f5/screenshot_2024-06-25_at_11-34-13_am.png",
           alt: "",
         },
       },
@@ -46,7 +46,7 @@ export const Default: Story = {
         description:
           "A pure CSS hand of Blackjack which uses animating/pausing @property values to generate a random-ish set of cards.",
         screenshot: {
-          filename: "https://images.ctfassets.net/tk4rs2ojn89c/6MwZJOpblSb2dJwkZhwTTM/16f1a98e27b83ed12cf97dd32f332d8f/Screenshot_2024-06-25_at_11.32.59_AM.png",
+          filename: "https://a.storyblok.com/f/299841/3360x2100/a2cc799766/screenshot_2024-06-25_at_11-33-28_am.png",
           alt: "",
         },
       },
@@ -58,7 +58,7 @@ export const Default: Story = {
         description:
           "A Skillshare course that serves as an introduction to some basic Three.js concepts.",
         screenshot: {
-          filename: "https://images.ctfassets.net/tk4rs2ojn89c/1nMH9dALANE1PJHUlpYiqF/773860dab16fec4349a2f87dcc05b6cd/Screenshot_2024-06-25_at_11.41.49_AM.png",
+          filename: "https://a.storyblok.com/f/299841/3360x2100/4500db1dad/screenshot_2024-06-25_at_11-41-49_am.png",
           alt: "",
         },
       },
@@ -70,7 +70,7 @@ export const Default: Story = {
         description:
           "Uses Tensorflow and Posenet to detect the position of your hands, and plays appropriate musical notes based on where your hands would be on a guitar.",
         screenshot: {
-          filename: "https://images.ctfassets.net/tk4rs2ojn89c/7dHHjozATyVaLMRtGEqNMo/f48038378027b113fae24cfeb0fb820d/Screenshot_2024-06-25_at_1.36.20_PM.png",
+          filename: "https://a.storyblok.com/f/299841/3360x2100/43943640a8/screenshot_2024-06-25_at_11-42-51_am.png",
           alt: "Screenshot of playable Air Guitar",
         },
       },
@@ -81,7 +81,7 @@ export const Default: Story = {
         role: "Concept, Development",
         description: "Elevation data mapped onto a three.js particle system",
         screenshot: {
-          filename: "https://images.ctfassets.net/tk4rs2ojn89c/7l4nap2mRKVDLLaDnbTuJx/95310a64e894d9e548d8e4c634b75de6/Screenshot_2024-06-25_at_11.33.28_AM.png",
+          filename: "https://a.storyblok.com/f/299841/3360x2100/e125ff0896/screenshot_2024-06-25_at_11-32-59_am.png",
           alt: "Elevation map",
         },
       },

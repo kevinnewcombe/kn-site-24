@@ -4,7 +4,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-10);
-  margin-top: var(--space-5);
+  margin: var(--space-5) auto 0;
+  max-width: var(--size-container-300);
   &__card{
     color: var(--color-text-primary);
     cursor: pointer;

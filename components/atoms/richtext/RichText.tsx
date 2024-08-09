@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { render } from 'storyblok-rich-text-react-renderer';
 /**
- * Simple component to render rich text
+ * Simple component to render rich text from the Storyblok API
  */
 
 const RichText: React.FC<{children:ReactNode}>= ({children}) => {

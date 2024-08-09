@@ -1,5 +1,4 @@
 import './projectcards.scss'
-import { ProjectType } from "@/lib/types";
 import Image from 'next/image';
 import DateComponent from '@/components/atoms/date/Date';
 import { storyblokEditable } from "@storyblok/react/rsc";
@@ -7,10 +6,24 @@ import { render } from 'storyblok-rich-text-react-renderer';
 /**
  * Card layout for projects
  */
+export type ProjectType = {
+  name: string,
+  url: string,
+  date: string,
+  role: string,
+  description: string,
+  screenshot: {
+    filename: string,
+    alt: string,
+  }
+}
+
+
 const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
   return (
     <div className="projectcards">
-      {projects.map((project, index) => (
+      {projects.map((project, index) => { 
+        return(
         <a href={ project.url } className="projectcards__card" key={index} >
    
           <Image
@@ -31,7 +44,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
             </span>
           </span> 
         </a>
-      ))}
+      )})}
     </div>
   );
 }

@@ -13,9 +13,15 @@ type Story = StoryObj<typeof Post>;
 
 export const Default: Story = {
   name: "Post",
+  argTypes: {
+    editURL: {
+      description: "The URL to edit the post in Storyblok. Only displays when the node env is \"development\"",
+    },  
+  },
   args: {
     title: "A really great headline",
     date: "2024-08-07T14:12:49.807Z",
+    editURL: "https://app.storyblok.com/#!/me/spaces/12345/stories/67890/edit",
     children: (
       <>
         <p>
