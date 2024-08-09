@@ -1,0 +1,14 @@
+@use "/assets/styles/helpers";
+
+.sizecontainer{
+  margin: 0 auto;
+
+  &__250{
+    max-width: var(--space-250);
+  }
+  
+  &__300{
+    max-width: var(--size-container-300);
+  }
+
+}

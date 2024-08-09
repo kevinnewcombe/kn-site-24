@@ -1,7 +1,6 @@
 
 import "./base.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import StoryblokBridgeLoader from "@storyblok/react/bridge-loader";
  
 import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
@@ -13,6 +12,7 @@ import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
 import { HtmlEmbedStoryblok } from "@/components/atoms/htmlembed/HtmlEmbed";
+import { SizeContainerStoryblok } from "@/components/atoms/sizecontainer/SizeContainer";
 
 
 storyblokInit({
@@ -24,7 +24,8 @@ storyblokInit({
     pageIntro: PageIntroStoryblok,
     richText: RichTextStoryblok,
     projectCards: ProjectCardsStoryblok,
-    htmlEmbed: HtmlEmbedStoryblok
+    htmlEmbed: HtmlEmbedStoryblok,
+    sizeContainer: SizeContainerStoryblok,
   }
 });
 
@@ -70,7 +71,6 @@ export default function RootLayout({
             <main>{children}</main>
           <Footer />
         </body>
-        {/* <StoryblokBridgeLoader options={{}} /> */}
       </html>
   );
 }

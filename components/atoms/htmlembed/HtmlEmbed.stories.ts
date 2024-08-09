@@ -14,7 +14,7 @@ type Story = StoryObj<typeof HtmlEmbed>;
 export const Default: Story = {
   name: 'HtmlEmbed',
   args: {
-    html: '<p>Lorem ipsum <strong>dolor</strong> <a href="#">sit</a></p> <ul><li>amet</li><li>consectetur</li></ul>'
+    html: '<p>Lorem ipsum <strong>dolor</strong>\n<a href="#">sit</a></p>\n<ul>\n<li>amet</li>\n<li>consectetur</li>\n</ul>'
   },
   argTypes: { // https://storybook.js.org/docs/api/arg-types
     html: {
