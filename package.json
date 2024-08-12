@@ -22,6 +22,7 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "10.4.15",
+    "axios": "^1.7.3",
     "contentful-import": "^9.0.4",
     "date-fns": "2.30.0",
     "dotenv": "^16.4.5",
@@ -30,6 +31,7 @@
     "postmark": "^4.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha-v3": "^1.10.1",
     "storyblok-rich-text-react-renderer": "^2.9.2",
     "typescript": "^5.1.6"
   },

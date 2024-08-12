@@ -1,0 +1,38 @@
+label{
+  width: 100%;
+  font-family: var(--font-mulish), sans-serif;  
+  font-weight: 700;
+  display: inline-block;
+  font-size: 1.25rem;
+  &:not(:first-of-type){
+    padding-top: var(--space-4);
+  }
+}
+input, textarea{
+  --default-border-color: var(--color-border);
+  --active-border-color: var(--color-anchor);
+  font-size: 1.25rem;
+  margin-top: var(--space-1);
+  padding: var(--space-4);
+  border:2px solid var(--default-border-color);
+  border-radius: 4px;
+  &:hover, &:focus{
+    outline: none;
+    border-color: var(--active-border-color);
+  }
+}
+input:not([type="submit"]), textarea{
+  width: 100%;
+}
+
+input[type="submit"]{
+  --default-border-color: var(--color-anchor-light);
+  margin-top: var(--space-8);
+  padding: var(--space-4) var(--space-8);
+  cursor: pointer;
+  background: #fff;
+}
+
+textarea{
+  font-family: var(--font-mulish), sans-serif;
+}

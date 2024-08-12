@@ -1,37 +1,31 @@
 "use client";
+import { submitEmail } from '@/lib/email';
+import { useFormState } from 'react-dom';
 
-import { sendEmail } from '@/lib/email';
 
 
-const handleSubmit = async (event:any) => {
-  event.preventDefault();
-
-  // Process form data and prepare email details
-  const emailDetails = {
-    to: 'kevin@kevin-newcombe.com',
-    from: 'kevin@kevin-newcombe.com',
-    subject: 'Postmark submission',
-    message: '...',
-  };
-
-  try {
-    await sendEmail(emailDetails);
-    console.log('Email sent successfully!');
-    // Perform any additional actions after successful email sending
-  } catch (error) {
-    console.error('Error sending email:', error);
-    // Handle error case
-  }
-};
-
-export default async function Page() {
-
+export default function Page() {
+  const [state, formAction ] = useFormState(submitEmail, null);
   return (
-    <> 
-      <form onSubmit={handleSubmit}>
-        <input type="submit"></input>
+    <>
+      <form action={formAction}>
+        <label>
+          <span className="labeltext">Name</span>
+          <input type="text" id="name" name="name" defaultValue="John Doe" />
+        </label>
+
+        <label>
+          <span className="labeltext">Email</span>
+          <input type="text" id="email" name="email" defaultValue="test@test.com" />
+        </label>
+
+        <label>
+          <span className="labeltext">Message</span>
+          <textarea id="message" name="message" defaultValue="Lorem ipsum dolor sit amet" />
+        </label>
+        {/* { state.message && <p>{ state.message }</p> } */}
+        <input type="submit" value="Submit" />
       </form>
-      <h1>This is the contact page</h1>
     </>
   );
 }
