@@ -16,10 +16,8 @@ const ContactForm: React.FC<{}>= ({}) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    const loadingToast = toast.loading("Sending message...");
     const token = await getCaptchaToken();
     const res = await contactUsAction(token, formData);
-    toast.dismiss(loadingToast);
     setIsSending(false);
     setUserFeedback(res);
     if(res.success){

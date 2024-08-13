@@ -45,9 +45,9 @@ export async function contactUsAction(token:string | null, formData:FormData){
   }
 
   return await sendEmail(
-    escape(formData.get('name') as string), 
-    escape(formData.get('email') as string), 
-    escape(formData.get('message') as string),
+    name, 
+    email, 
+    message,
     captchaData.score
   );
 }
@@ -60,7 +60,7 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     <p>The following message was submitted on kevin-newcombe.com/contact</p>
 
     <p>
-      <strong>From:</strong> ${name} <a href="mailto:${email}"(${email})</a><br />
+      <strong>From:</strong> ${name} (${email})</a><br />
       <strong>Captcha score</strong> : ${recaptchaScore}<br /><br />
       <strong>Body</strong><br />
       ${ message }
@@ -75,13 +75,12 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     HtmlBody,
   };
 
-  return {
-    success: true,
-    message: 'This is a hardcoded success message. There was no attempt to call Postmark'
-  }
+  // return {
+  //   success: true,
+  //   message: 'This is a hardcoded success message. There was no attempt to call Postmark'
+  // }
 
 
-  // Commented out so I don't spam the server/myself while working on non-postmark stuff
   try {
     await postmarkClient.sendEmail(emailData);
     return {
