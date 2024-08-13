@@ -25,6 +25,10 @@ input:not([type="submit"]), textarea{
   width: 100%;
 }
 
+fieldset{
+  border: none;
+}
+
 input[type="submit"]{
   --default-border-color: var(--color-anchor-light);
   margin-top: var(--space-8);
