@@ -69,13 +69,13 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     HtmlBody,
   };
 
-  return {
-    success: true,
-    message: 'Message sent!'
-  }
+  // return {
+  //   success: true,
+  //   message: 'Message sent!'
+  // }
 
-  /* 
-  Commented out so I don't spam the server/myself while working on non-postmark stuff
+
+  // Commented out so I don't spam the server/myself while working on non-postmark stuff
   try {
     await postmarkClient.sendEmail(emailData);
     console.log('Email sent successfully!');
@@ -89,5 +89,4 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
       message: `${error}`
     }
   }
-  */
 }
