@@ -4,6 +4,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
+import Script from "next/script";
 
 import Page from "@/components/templates/page/Page";
 import { PostStoryblok } from "@/components/templates/post/Post";
@@ -12,6 +13,7 @@ import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
 import { HtmlEmbedStoryblok } from "@/components/atoms/htmlembed/HtmlEmbed";
 import { SizeContainerStoryblok } from "@/components/atoms/sizecontainer/SizeContainer";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -67,13 +69,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaSans.variable} ${mulish.variable}`}>
+        <Toaster position="top-right" />
         <Header />
         <main>{children}</main>
         <Footer />
-        <script
-          defer
-          type="text/javascript"
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.recaptchaSiteKey}`}
+        <Script
+          strategy="beforeInteractive"
+          // defer
+          // type="text/javascript"
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
         />
       </body>
     </html>

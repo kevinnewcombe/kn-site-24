@@ -6,11 +6,7 @@ export default function ContactPage() {
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata() {
   return {
     title: "Contact Page"
   }

@@ -1,6 +1,8 @@
 "use client";
 import toast from 'react-hot-toast';
 import type { FormEvent } from "react";
+import { contactUsAction } from '@/app/actions';
+import { getCaptchaToken } from '@/app/utils/captcha';
 
 /**
  * ContactForm description goes here
@@ -16,11 +18,15 @@ const ContactForm: React.FC<{}>= ({}) => {
 
     const loadingToast = toast.loading("Sending message...");
 
-    setTimeout(() => {
+    const token = await getCaptchaToken();
+    const res = await contactUsAction(token, formData);
+    toast.dismiss(loadingToast);
+    if(res.success){
       form.reset();
-      toast.dismiss(loadingToast);
-      toast.success("Message sent!");
-    }, 2000);
+      toast.success(res.message);
+    }else{
+      toast.error(res.message);
+    }
   }
   return (
     <form onSubmit={handleSubmit}>
