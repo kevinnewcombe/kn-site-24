@@ -27,6 +27,8 @@
     "contentful-import": "^9.0.4",
     "date-fns": "2.30.0",
     "dotenv": "^16.4.5",
+    "escape-html": "^1.0.3",
+    "isomorphic-dompurify": "^2.14.0",
     "next": "latest",
     "next-recaptcha-v3": "^1.4.1",
     "postcss": "8.4.31",

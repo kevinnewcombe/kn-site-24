@@ -1,10 +1,17 @@
 "use server"
-
+const escape = require('escape-html');
 import { verifyCaptchaToken } from "@/lib/utils/captcha"
 const postmark = require("postmark");
 const postmarkClient = new postmark.ServerClient(process.env.postmarkServerToken as string);
 
 export async function contactUsAction(token:string | null, formData:FormData){
+  if(!formData){
+    return {
+      success: false,
+      message: 'Fill out the form'
+    }
+  }
+
   if(!token){
     return {
       success: false,
@@ -29,31 +36,28 @@ export async function contactUsAction(token:string | null, formData:FormData){
     }
   }
 
-  if(!formData){
-    return {
-      success: false,
-      message: 'Fill out the form'
-    }
-  }
-  // do something with the formData
-  console.log(`name: ${formData.get('name')}`);
+  console.log(captchaData)
   
-  return  await sendEmail(formData.get('name') as string, formData.get('name') as string, formData.get('message') as string);
-  return {
-    success: true,
-    message: 'Message sent!'
-  }
+  return await sendEmail(
+    escape(formData.get('name') as string), 
+    escape(formData.get('email') as string), 
+    escape(formData.get('message') as string),
+    captchaData.score
+  );
 }
 
 
-async function sendEmail(name:string, email:string, message:string) {
+async function sendEmail(name:string, email:string, message:string, recaptchaScore:number) {
 
   const HtmlBody = `
     <html><body>
-    <p>The following has just been submitted on kevin-newcombe.com/contact</p>
+    <p>The following message was submitted on kevin-newcombe.com/contact</p>
 
-    <p>From: <a href="mailto:${email}">${name}</a>\n\n
-      ${  message.replace(/<[^>]+>/g, '') }
+    <p>
+      <strong>From:</strong> ${name} <a href="mailto:${email}"><${email}></a><br />
+      <strong>Captcha score</strong> : ${recaptchaScore}<br /><br />
+      <strong>Body</strong><br />
+      ${ message }
     </p>
     </body></html>
   `;
@@ -61,6 +65,7 @@ async function sendEmail(name:string, email:string, message:string) {
     From: 'kevin@kevin-newcombe.com',
     To: 'kevin@kevin-newcombe.com',
     Subject: 'Form submission from kevin-newcombe.com/contact',
+    ReplyTo: `${name} <${email}>`,
     HtmlBody,
   };
 
@@ -74,7 +79,7 @@ async function sendEmail(name:string, email:string, message:string) {
   } catch (error) {
     return {
       success: false,
-      message: error
+      message: `${error}`
     }
   }
 }
