@@ -27,7 +27,6 @@ export async function verifyCaptchaToken(token:string){
   const res = await fetch(url, { method: 'POST'});
   const captchaData:CaptchaData = await res.json(); //returns an object containing the score
   if(!res.ok) return null;
-  console.log(captchaData);
   return captchaData;
 }
 
