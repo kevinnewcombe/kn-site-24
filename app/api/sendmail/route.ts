@@ -1,5 +1,4 @@
 import axios, { HttpStatusCode } from "axios";
-import type { NextApiResponse } from 'next'
 import { NextResponse } from "next/server";
 import qs from "qs";
 type ResponseData = {
@@ -9,7 +8,7 @@ type ResponseData = {
   score: number,
   action: string,
 }
-export async function POST(req: Request, res: NextApiResponse<ResponseData>) {
+export async function POST(req: Request) {
   const body = await req.json();
   const email = body.email;
   const captchaToken = body.captchaToken;
@@ -35,20 +34,13 @@ export async function POST(req: Request, res: NextApiResponse<ResponseData>) {
     url: "https://www.google.com/recaptcha/api/siteverify",
   };
   const response = await axios(options);
-  // console.log('response', response);
   if (response.data.success === false) {
     return NextResponse.json(
       { error: "Unauthorized" },
       { status: HttpStatusCode.Unauthorized }
     );
   }else{
-    console.log('success in route');
+    // captcha returned response.data with a `score` value
     return NextResponse.json(response.data);
-    // send email
-    // console.log('success in route');
-    // console.log(response.data);
-    // res.status(200).json(response.data);
   }
-  
-  // the captcha token is valid
 }

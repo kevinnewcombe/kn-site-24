@@ -53,3 +53,42 @@ export async function submitEmail (prevState: any, formData: FormData){
     // Handle error case
   }
 };
+
+
+
+
+
+export async function shareMeal(prevState, formData){
+  function isInvalidText(text){
+    return !text || text.trim() === '';
+  }
+
+  const meal = {
+    title: formData.get('title'),
+    summary: formData.get('summary'),
+    instructions: formData.get('instructions'),
+    image: formData.get('image'),
+    creator: formData.get('name'),
+    creator_email: formData.get('email')
+  };
+
+  // server-side validation
+  if(
+      isInvalidText(meal.title) || 
+      isInvalidText(meal.summary) || 
+      isInvalidText(meal.instructions) || 
+      isInvalidText(meal.creator) || 
+      isInvalidText(meal.creator_email) || 
+      !meal.creator_email.includes('@') || 
+      !meal.image || meal.image.size === 0
+    ){
+    return {
+      message: 'Invalid input.'
+    }
+  }
+
+  await saveMeal(meal);
+  revalidatePath('/meals'); // refresh the cache for a specific path
+
+  redirect('/meals')
+}
