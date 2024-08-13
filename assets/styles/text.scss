@@ -25,7 +25,6 @@ h3{
 a{
   text-decoration: none;
   color: var(--color-anchor);
-  transition: var(--transition);
   transition-duration: var(--transition-duration);
   &:hover{
     text-decoration: underline;

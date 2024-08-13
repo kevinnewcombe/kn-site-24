@@ -11,11 +11,19 @@ export async function contactUsAction(token:string | null, formData:FormData){
       message: 'Fill out the form'
     }
   }
-
+  const name = escape(formData.get('name') as string);
+  const email = escape(formData.get('email') as string);
+  const message = escape(formData.get('message') as string);
+  if(!name.trim() || !email.trim() || !message.trim()){
+    return {
+      success: false,
+      message: 'All form fields are required.'
+    }
+  }
   if(!token){
     return {
       success: false,
-      message: "Token not found"
+      message: "Recaptcha token not found."
     }
   }
 
@@ -36,8 +44,6 @@ export async function contactUsAction(token:string | null, formData:FormData){
     }
   }
 
-  console.log(captchaData)
-  
   return await sendEmail(
     escape(formData.get('name') as string), 
     escape(formData.get('email') as string), 
@@ -54,7 +60,7 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     <p>The following message was submitted on kevin-newcombe.com/contact</p>
 
     <p>
-      <strong>From:</strong> ${name} <a href="mailto:${email}"><${email}></a><br />
+      <strong>From:</strong> ${name} <a href="mailto:${email}"(${email})</a><br />
       <strong>Captcha score</strong> : ${recaptchaScore}<br /><br />
       <strong>Body</strong><br />
       ${ message }
@@ -69,16 +75,15 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     HtmlBody,
   };
 
-  // return {
-  //   success: true,
-  //   message: 'Message sent!'
-  // }
+  return {
+    success: true,
+    message: 'This is a hardcoded success message. There was no attempt to call Postmark'
+  }
 
 
   // Commented out so I don't spam the server/myself while working on non-postmark stuff
   try {
     await postmarkClient.sendEmail(emailData);
-    console.log('Email sent successfully!');
     return {
       success: true,
       message: 'Message sent!'

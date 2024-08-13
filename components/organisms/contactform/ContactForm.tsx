@@ -1,5 +1,4 @@
 "use client";
-import toast from 'react-hot-toast';
 import { useState } from 'react';
 import type { FormEvent } from "react";
 import { contactUsAction } from '@/lib/utils/contact';
@@ -9,9 +8,11 @@ import { getCaptchaToken } from "@/lib/utils/captcha";
  * Contact Form
  */
 const ContactForm: React.FC<{}>= ({}) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [userFeedback, setUserFeedback] = useState<{success:boolean,message:string}|null>(null);
   async function handleSubmit(e: FormEvent){
-    setIsLoading(true);
+    setIsSending(true);
+    setUserFeedback(null);
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -19,29 +20,28 @@ const ContactForm: React.FC<{}>= ({}) => {
     const token = await getCaptchaToken();
     const res = await contactUsAction(token, formData);
     toast.dismiss(loadingToast);
-    setIsLoading(false);
+    setIsSending(false);
+    setUserFeedback(res);
     if(res.success){
       form.reset();
-      toast.success(res.message);
-    }else{
-      toast.error(res.message);
     }
   }
   return (
     <form onSubmit={handleSubmit}>
-      <fieldset  disabled={ isLoading }>
+      { userFeedback && userFeedback.success == false && !isSending ? <strong className={`error-text`}>{ userFeedback.message }</strong> : ''}
+      <fieldset disabled={ isSending }>
         <label>
           <span className="labeltext">Name</span>
-          <input type="text" id="name" name="name" defaultValue="John Doe" />
+          <input type="text" id="name" name="name" required />
         </label>
 
         <label>
           <span className="labeltext">Email</span>
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
-            defaultValue="test@test.com"
+            required
           />
         </label>
 
@@ -50,10 +50,10 @@ const ContactForm: React.FC<{}>= ({}) => {
           <textarea
             id="message"
             name="message"
-            defaultValue="<h1>Lorem</h1> ipsum dolor sit amet"
+            required
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value={ userFeedback?.success ? 'Sent!' : isSending ? `Sending...` : `Send it!` } />
       </fieldset>
     </form>
   );

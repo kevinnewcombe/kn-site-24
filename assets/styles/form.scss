@@ -9,17 +9,27 @@ label{
   }
 }
 input, textarea{
+  transition-duration: var(--transition-duration-fast);
   --default-border-color: var(--color-border);
-  --active-border-color: var(--color-anchor);
+  --hover-border-color: var(--color-border-hover);
+  --focus-border-color: var(--color-border-focus);
   font-size: 1.25rem;
   margin-top: var(--space-1);
   padding: var(--space-4);
   border:2px solid var(--default-border-color);
   border-radius: 4px;
-  &:hover, &:focus{
-    outline: none;
-    border-color: var(--active-border-color);
+  &:hover{
+    border-color: var(--hover-border-color);
   }
+  &:focus{
+    outline: none;
+    border-color: var(--focus-border-color);
+  }
+
+  &:user-invalid{
+    border-color: #dc221e;
+  }
+
 }
 input:not([type="submit"]), textarea{
   width: 100%;
@@ -27,16 +37,32 @@ input:not([type="submit"]), textarea{
 
 fieldset{
   border: none;
+  padding:0;
+  margin:0;
 }
 
-input[type="submit"]{
-  --default-border-color: var(--color-anchor-light);
+input[type="submit"] {  
   margin-top: var(--space-8);
   padding: var(--space-4) var(--space-8);
+  background: var(--color-page-bg);
+  font-weight: 600;
+  color:var(--color-border-focus);
   cursor: pointer;
-  background: #fff;
+  &:hover, &:focus{
+    --hover-border-color: var(--color-anchor);
+    --focus-border-color: var(--color-anchor);
+    background: var(--color-anchor);
+    color: var(--color-page-bg);
+  }
 }
 
 textarea{
   font-family: var(--font-mulish), sans-serif;
+}
+
+fieldset:disabled{
+  pointer-events: none;
+  input{
+    background: revert;
+  }
 }

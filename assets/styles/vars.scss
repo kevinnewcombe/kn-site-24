@@ -1,5 +1,5 @@
 :root{
-  --transition: 0.125s;
+
   
   // colors
   --color-anchor:  #0068d7;
@@ -8,11 +8,15 @@
   --color-headline-text: #222;
   --color-primary-text: #444;
   --color-secondary-text: #777;
+  --color-page-bg: #fff;
 
   --color-border: #d7d7d7;
+  --color-border-hover: #aaa;
+  --color-border-focus: #333;
   --color-border-secondary: #eeeeee;
   // --color-bg-surface: #fff;
   --color-bg-surface-secondary: #f7f7f7;
+  --color-error: #d61c19;
 
   // spacing
   --space-1: 4px;
@@ -31,6 +35,7 @@
 
 
   --transition-duration: 0.25s;
+  --transition-duration-fast: 0.125s;
 
   // sizes
   @media(prefers-color-scheme: light){
