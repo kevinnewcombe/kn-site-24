@@ -14,6 +14,7 @@ module.exports = {
     storyblokPageVersion: process.env.STORYBLOK_PAGE_VERSION,
     storyblokPreviewURLBase: process.env.STORYBLOK_PREVIEW_URL_BASE,
     postmarkServerToken: process.env.POSTMARK_SERVER_TOKEN,
-    
+    recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY, // process.env.recaptchaSiteKey
+    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY // process.env.recaptchaSecretKey
   },
 };

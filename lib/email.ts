@@ -1,12 +1,12 @@
 'use server'
 const postmark = require("postmark");
 const postmarkClient = new postmark.ServerClient(process.env.postmarkServerToken as string);
-
+import axios from "axios";
     
 export async function sendEmail({ to, from, subject, message }: { to: string, from: string, subject: string, message: string }) {
   return true; // for testing
  
- 
+  
  
   // const emailData = {
   //   From: from,
@@ -27,9 +27,12 @@ export async function sendEmail({ to, from, subject, message }: { to: string, fr
 
 
 
+
 export async function submitEmail (prevState: any, formData: FormData){
   
+  /*     End of Recaptcha     */
   // Process form data and prepare email details
+  console.log('submit email!');
   
   const emailDetails = {
     to: 'kevin@kevin-newcombe.com',

@@ -1,7 +1,6 @@
 
 import "./base.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
- 
 import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
@@ -66,12 +65,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <html lang="en">
-        <body className={ `${firaSans.variable} ${mulish.variable}` }>
-          <Header />
-            <main>{children}</main>
-          <Footer />
-        </body>
-      </html>
+    <html lang="en">
+      <body className={`${firaSans.variable} ${mulish.variable}`}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <script
+          defer
+          type="text/javascript"
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.recaptchaSiteKey}`}
+        />
+      </body>
+    </html>
   );
 }
