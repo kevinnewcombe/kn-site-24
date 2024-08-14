@@ -25,7 +25,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
       {projects.map((project, index) => { 
         return(
         <a href={ project.url } className="projectcards__card" key={index} >
-   
+          <span>
           <Image
             src={`${project.screenshot.filename}/m/800x0`}
             width={800}
@@ -33,6 +33,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
             alt={project.screenshot.alt}
             sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)" 
           /> 
+          </span>
           <span className="projectcards__content">
             <span>
               <h3>{project.name}</h3>
