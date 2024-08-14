@@ -4,7 +4,10 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 type SizeProps = 250 | 300;
 
 /**
- * SizeContainer description goes here
+ * Limit the max width of a container.<br />
+ * The value of `size` (300, 250, etc) relates to a CSS variable named --size-container-{number}, <strong>not</strong> a pixel or rem value.
+ * `size-container-300 !== 300px`
+ * 
  */
 
 const SizeContainer: React.FC<{size:SizeProps, children:ReactNode}>= ({size = 300, children}) => {
