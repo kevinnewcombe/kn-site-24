@@ -30,19 +30,21 @@ export async function verifyCaptchaToken(token:string){
   return captchaData;
 }
 
-type CaptchaData = {
-  success: true;
-  challenge_ts: string;
-  hostname: string;
-  score: number;
-  action: string;
-} |  {
-  success: false;
-  challenge_ts: string;
-  hostname: string;
-  score: number;
-  action: string;
-  "error-codes" : ErrorCodes[];
-}
+type CaptchaData =
+  | {
+      success: true;
+      challenge_ts: string;
+      hostname: string;
+      score: number;
+      action: string;
+    }
+  | {
+      success: false;
+      challenge_ts: string;
+      hostname: string;
+      score: number;
+      action: string;
+      "error-codes": ErrorCodes[];
+    };
 
 type ErrorCodes = 'missing-input-secret' | 'invalid-input-secret' | 'missing-input-response' | 'invalid-input-response' | 'bad-request' | 'timeout-or-duplicate'

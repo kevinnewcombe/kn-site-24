@@ -12,7 +12,6 @@ module.exports = {
   env: {
     storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
     storyblokPageVersion: process.env.STORYBLOK_PAGE_VERSION,
-    storyblokPreviewURLBase: process.env.STORYBLOK_PREVIEW_URL_BASE,
-    postmarkServerToken: process.env.POSTMARK_SERVER_TOKEN
+    storyblokPreviewURLBase: process.env.STORYBLOK_PREVIEW_URL_BASE
   },
 };
