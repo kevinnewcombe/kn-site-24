@@ -24,7 +24,6 @@ jobs:
           echo "POSTMARK_SERVER_TOKEN=${{secrets.POSTMARK_SERVER_TOKEN}}" >> .env
           echo "NEXT_PUBLIC_CAPTCHA_SITE_KEY=${{secrets.NEXT_PUBLIC_CAPTCHA_SITE_KEY}}" >> .env
           echo "CAPTCHA_SECRET_KEY=${{secrets.CAPTCHA_SECRET_KEY}}" >> .env
-          echo "NEXTAUTH_URL=${{secrets.NEXTAUTH_URL}}" >> .env
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
