@@ -25,37 +25,34 @@ const ContactForm: React.FC<{}>= ({}) => {
     }
   }
   return (
-    <section className="contactform">
-      <h2>Contact</h2>
-      <form className="contactform__form" onSubmit={handleSubmit}>
-        { userFeedback && userFeedback.success == false && !isSending ? <strong className={`error-text`}>{ userFeedback.message }</strong> : ''}
-        <fieldset disabled={ isSending }>
-          <label>
-            <span className="labeltext">Name</span>
-            <input type="text" id="name" name="name" required />
-          </label>
-          <label>
-            <span className="labeltext">Email</span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-            />
-          </label>
+    <form className="contactform" onSubmit={handleSubmit}>
+      { userFeedback && userFeedback.success == false && !isSending ? <strong className={`error-text`}>{ userFeedback.message }</strong> : ''}
+      <fieldset disabled={ isSending }>
+        <label>
+          <span className="labeltext">Name</span>
+          <input type="text" id="name" name="name" required />
+        </label>
+        <label>
+          <span className="labeltext">Email</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </label>
 
-          <label>
-            <span className="labeltext">Message</span>
-            <textarea
-              id="message"
-              name="message"
-              required
-            />
-          </label>
-          <input type="submit" value={ userFeedback?.success ? 'Sent!' : isSending ? `Sending...` : `Send it!` } />
-        </fieldset>
-      </form>
-    </section>
+        <label>
+          <span className="labeltext">Message</span>
+          <textarea
+            id="message"
+            name="message"
+            required
+          />
+        </label>
+        <input type="submit" value={ userFeedback?.success ? 'Sent!' : isSending ? `Sending...` : `Send it!` } />
+      </fieldset>
+    </form>
   );
 }
 
