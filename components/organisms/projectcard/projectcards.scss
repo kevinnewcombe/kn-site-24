@@ -10,11 +10,10 @@
     color: var(--color-text-primary);
     cursor: pointer;
     border-radius: 2px;
-    overflow: hidden;
     display: grid;
-    // grid-template-rows: subgrid;
-    // grid-row: span 3;
-    // grid-gap: 0;
+    grid-row: span 3;
+    grid-gap: 0;
+    grid-template-rows: subgrid;
 
     &:hover, &:focus{
       background: #ebf5ff;
@@ -22,14 +21,17 @@
       text-decoration: none;
     }
   }
-  &__content{
-    display: grid;
-    padding: var(--space-5);
-    grid-template-rows: subgrid;
-    grid-row: span 2;
-    
-  }
 
+  &__headline{
+    padding: var(--space-5) var(--space-5) 0;
+  }
+  &__description{
+    padding: var(--space-3) var(--space-5) var(--space-5);
+    p{
+      padding:0;
+      margin:0;
+    }
+  }
   &__subtitle{
     font-size: helpers.rem(14);
   }
