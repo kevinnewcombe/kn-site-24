@@ -8,10 +8,6 @@ jobs:
   chromatic:
     name: Run Chromatic
     runs-on: ubuntu-latest
-    env: 
-      POSTMARK_SERVER_TOKEN: ${{ secrets.POSTMARK_SERVER_TOKEN }}
-      NEXT_PUBLIC_CAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_CAPTCHA_SITE_KEY }}
-      CAPTCHA_SECRET_KEY: ${{ secrets.CAPTCHA_SECRET_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,6 +19,12 @@ jobs:
       - name: Install dependencies
         # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
         run: npm ci
+      - name: Set secrets
+        run: | # Secrets needed on the server
+          echo "POSTMARK_SERVER_TOKEN=${{secrets.POSTMARK_SERVER_TOKEN}}" >> .env
+          echo "NEXT_PUBLIC_CAPTCHA_SITE_KEY=${{secrets.NEXT_PUBLIC_CAPTCHA_SITE_KEY}}" >> .env
+          echo "CAPTCHA_SECRET_KEY=${{secrets.CAPTCHA_SECRET_KEY}}" >> .env
+          echo "NEXTAUTH_URL=${{secrets.NEXTAUTH_URL}}" >> .env
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
