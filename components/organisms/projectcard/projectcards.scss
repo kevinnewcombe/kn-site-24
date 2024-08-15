@@ -23,10 +23,11 @@
 
   &__body{
     padding: var(--space-5);
+    border: 1px dotted blue;
   }
 
   &__headline{
-
+    background: rgba(255, 0, 0, 0.1);
   }
   
   &__description{

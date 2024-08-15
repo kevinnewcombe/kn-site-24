@@ -23,28 +23,31 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
   return (
     <div className="projectcards">
       {projects.map((project, index) => { 
-        return(
-        <a href={ project.url } className="projectcards__card" key={index} >
-          <Image
-            className="projectcards__thumb"
-            src={`${project.screenshot.filename}/m/800x0`}
-            width={800}
-            height={0}
-            alt={project.screenshot.alt}
-            sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)" 
-          /> 
-          <span className="projectcards__body">
-              <span className="projectcards__headline">
+        return (
+          <a href={project.url} className="projectcards__card" key={index}>
+            <Image
+              className="projectcards__thumb"
+              src={`${project.screenshot.filename}/m/800x0`}
+              width={800}
+              height={0}
+              alt={project.screenshot.alt}
+              sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)"
+            />
+            <div className="projectcards__body">
+              <div className="projectcards__headline">
                 <h3>{project.name}</h3>
-                <DateComponent dateString={project.date} textFormat="LLLL yyyy" />
+                <DateComponent
+                  dateString={project.date}
+                  textFormat="LLLL yyyy"
+                />
                 <span className="projectcards__subtitle">{project.role}</span>
-              </span>
-              <span className="projectcards__description">
+              </div>
+              <div className="projectcards__description">
                 {render(project.description)}
-              </span>
-            </span>
-        </a>
-      )})}
+              </div>
+            </div>
+          </a>
+        );})}
     </div>
   );
 }
