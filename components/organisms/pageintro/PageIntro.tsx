@@ -9,8 +9,8 @@ import { render } from 'storyblok-rich-text-react-renderer';
 const PageIntro: React.FC<{title:string, children:ReactNode}>= ({title, children}) => {
   return (
     <div className="pageintro">
-      {/* <h1 className="pageintro__title">{ title }</h1> */}
-      {/* { children } */}
+      <h1 className="pageintro__title">{ title }</h1>
+      { children }
     </div>
   );
 }

@@ -8,13 +8,12 @@
   max-width: var(--size-container-300);
   &__card{
     color: var(--color-text-primary);
-    background: rgba(0, 255, 255, 0.05);
     cursor: pointer;
     border-radius: 2px;
     gap:0;
-    grid-row: span 3; /* every card spans across 4 rows of the main grid */
-    display: grid; /* make item a grid container */
-    grid-template-rows: subgrid [thumb] [head] [desc]; /* define the grid template */
+    grid-row: span 3; 
+    display: grid; 
+    grid-template-rows: subgrid [thumb][head][desc];
     &:hover, &:focus{
       background: #ebf5ff;
       color: var(--color-text-primary);
@@ -23,30 +22,18 @@
   }
   
   &__thumb{
-    border: 1px dotted orange;
     img{
       display:block;
     }
   }
 
   &__body{
-    grid-gap:0;
-    display: grid;
-    grid-template-rows: subgrid [thumb][head];
     grid-row: span 2;
-    // padding: var(--space-5);
-    border: 1px dotted blue;
+    padding: var(--space-5);
   }
 
-  &__headline{
-    padding:0 !important;
-    margin:0 !important;
-    background: rgba(255, 0, 0, 0.1);
-  }
-  
   &__description{
-    // padding: var(--space-3) 0 0 0;
-    background: rgba(0, 255, 0, 0.1);
+    padding: var(--space-3) 0 0 0;
   }
 
   p, h3{

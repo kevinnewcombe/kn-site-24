@@ -26,18 +26,17 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
         return (
           <a href={project.url} className="projectcards__card" key={index}>
             <div className="projectcards__thumb">
-              image
-              {/* <Image
+              <Image
                 src={`${project.screenshot.filename}/m/800x0`}
                 width={800}
                 height={0}
                 alt={project.screenshot.alt}
                 sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)"
-            /> */}
+            />
             </div>
 
             <div className="projectcards__body">
-              <div className="projectcards__headline">
+              <div>
                 <h3>{project.name}</h3>
                 <DateComponent
                   dateString={project.date}
