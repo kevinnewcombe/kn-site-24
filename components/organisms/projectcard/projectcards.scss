@@ -1,8 +1,8 @@
 @use "/assets/styles/helpers";
 
 .projectcards{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: grid; // grid-template-columns: 1fr 1fr 1fr;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-10);
   margin: var(--space-5) auto 0;
   max-width: var(--size-container-300);
@@ -11,20 +11,18 @@
     background: rgba(0, 255, 255, 0.05);
     cursor: pointer;
     border-radius: 2px;
-
-    display: grid;
-    grid-row:auto / span 2;
-    grid-template-rows: subgrid;
-    grid-gap: 0;
+    gap:0;
+    grid-row: span 3; /* every card spans across 4 rows of the main grid */
+    display: grid; /* make item a grid container */
+    grid-template-rows: subgrid [thumb] [head] [desc]; /* define the grid template */
     &:hover, &:focus{
       background: #ebf5ff;
       color: var(--color-text-primary);
       text-decoration: none;
     }
   }
-
+  
   &__thumb{
-    display: block;
     border: 1px dotted orange;
     img{
       display:block;
@@ -32,22 +30,26 @@
   }
 
   &__body{
-    padding: var(--space-5);
+    grid-gap:0;
+    display: grid;
+    grid-template-rows: subgrid [thumb][head];
+    grid-row: span 2;
+    // padding: var(--space-5);
     border: 1px dotted blue;
-    // display: grid;
-    // grid-template-rows: subgrid;
   }
 
   &__headline{
+    padding:0 !important;
+    margin:0 !important;
     background: rgba(255, 0, 0, 0.1);
   }
   
   &__description{
-    padding: var(--space-3) 0 0 0;
+    // padding: var(--space-3) 0 0 0;
     background: rgba(0, 255, 0, 0.1);
   }
 
-  p{
+  p, h3{
     padding:0;
     margin:0;
   }
