@@ -34,13 +34,15 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
             sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)" 
           /> 
           </span>
-            <span className="projectcards__headline">
-              <h3>{project.name}</h3>
-              <DateComponent dateString={project.date} textFormat="LLLL yyyy" />
-              <span className="projectcards__subtitle">{project.role}</span>
-            </span>
-            <span className="projectcards__description">
-              {render(project.description)}
+          <span className="projectcards__content">
+              <span className="projectcards__headline">
+                <h3>{project.name}</h3>
+                <DateComponent dateString={project.date} textFormat="LLLL yyyy" />
+                <span className="projectcards__subtitle">{project.role}</span>
+              </span>
+              <span className="projectcards__description">
+                {render(project.description)}
+              </span>
             </span>
         </a>
       )})}
