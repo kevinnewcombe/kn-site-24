@@ -6,15 +6,16 @@
   gap: var(--space-10);
   margin: var(--space-5) auto 0;
   max-width: var(--size-container-300);
+  
   &__card{
     color: var(--color-text-primary);
-    background: rgba(0, 255, 255, 0.05);
-    cursor: pointer;
+    cursor: pointer; 
     border-radius: 2px;
-    gap:0;
-    grid-row: span 3; /* every card spans across 4 rows of the main grid */
-    display: grid; /* make item a grid container */
-    grid-template-rows: subgrid [thumb] [head] [desc]; /* define the grid template */
+    grid-row: span 3; 
+    display: grid;
+    grid-template-rows: subgrid [thumb][head][desc];
+    gap: 0;
+    row-gap: 0;
     &:hover, &:focus{
       background: #ebf5ff;
       color: var(--color-text-primary);
@@ -22,42 +23,33 @@
     }
   }
   
-  &__thumb{
-    border: 1px dotted orange;
-    img{
-      display:block;
-    }
-  }
 
   &__body{
-    row-gap: 0; /* override the inherited row gap */
-    gap:0;
     display: grid;
     grid-template-rows: subgrid [head][desc];
     grid-row: span 2;
-    // padding: var(--space-5);
-    border: 1px dotted blue;
+    grid-gap: 0;
+    padding: var(--space-5);
   }
 
   &__headline{
-    padding:0 !important;
-    margin:0 !important;
     background: rgba(255, 0, 0, 0.1);
-    row-gap: 0; /* override the inherited row gap */
-
   }
   
   &__description{
-    // padding: var(--space-3) 0 0 0;
-    background: rgba(0, 255, 0, 0.1);
-  }
-
-  p, h3{
-    padding:0;
-    margin:0;
+    padding: var(--space-3) 0 0 0;
   }
 
   &__subtitle{
     font-size: helpers.rem(14);
   }
+
+  img{
+    display:block;
+  }
+
+  p{
+    margin:0;
+  }
+
 } 
