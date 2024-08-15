@@ -6,36 +6,40 @@
   gap: var(--space-10);
   margin: var(--space-5) auto 0;
   max-width: var(--size-container-300);
-  
   &__card{
+    --border-color: rgb(253, 238, 209);
     color: var(--color-text-primary);
     cursor: pointer; 
-    border-radius: 2px;
+    border-radius: 3px;
+    overflow: hidden;
     grid-row: span 3; 
     display: grid;
-    grid-template-rows: subgrid [thumb][head][desc];
+    grid-template-rows: subgrid;
     gap: 0;
-    row-gap: 0;
+
     &:hover, &:focus{
       background: #ebf5ff;
       color: var(--color-text-primary);
       text-decoration: none;
+      --border-color: #57a7f7;
     }
   }
-  
 
   &__body{
     display: grid;
-    grid-template-rows: subgrid [head][desc];
+    grid-template-rows: subgrid;
     grid-row: span 2;
-    grid-gap: 0;
+    gap:0;
     padding: var(--space-5);
+    border-width: 0 1px 1px;
+    border-style: dotted;
+    border-color: var(--border-color);
   }
 
   &__headline{
-    background: rgba(255, 0, 0, 0.1);
+    // background: rgba(255, 0, 0, 0.1);
   }
-  
+
   &__description{
     padding: var(--space-3) 0 0 0;
   }
@@ -51,5 +55,4 @@
   p{
     margin:0;
   }
-
 } 

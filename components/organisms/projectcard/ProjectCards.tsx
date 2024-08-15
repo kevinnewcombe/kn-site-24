@@ -24,7 +24,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
     <div className="projectcards">
       {projects.map((project, index) => { 
         return (
-          <a href={project.url} className="projectcards__card" key={index}>
+          <a href={ project.url } className="projectcards__card" key={index}>
             <div>
               <Image
                 src={`${project.screenshot.filename}/m/800x0`}
@@ -37,7 +37,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
 
             <div className="projectcards__body">
               <div className="projectcards__headline">
-                <h3>{project.name}</h3>
+              <h3>{project.name}</h3>
                 <DateComponent
                   dateString={project.date}
                   textFormat="LLLL yyyy"
@@ -48,7 +48,6 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
                 {render(project.description)}
               </div>
             </div>
-
           </a>
         );})}
     </div>
