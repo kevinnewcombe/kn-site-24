@@ -30,8 +30,8 @@ storyblokInit({
 });
 
 export const metadata = {
-  title: `Kevin Newcombe`,
-  description: `Kevin Newcombe, front-end developer`,
+  title: `Kevin Newcombe | Front-end Developer`,
+  description: `The portfolio of Kevin Newcombe, front-end developer.`,
   metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`),
   openGraph: {
     images: [
