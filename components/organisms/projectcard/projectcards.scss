@@ -10,35 +10,35 @@
     color: var(--color-text-primary);
     cursor: pointer;
     border-radius: 2px;
-    display: grid;
-    grid-row: span 3;
-    grid-gap: 0;
-    grid-template-rows: subgrid;
-
     &:hover, &:focus{
       background: #ebf5ff;
       color: var(--color-text-primary);
       text-decoration: none;
     }
   }
+
+  &__thumb{
+
+  }
+
   &__body{
     padding: var(--space-5);
   }
 
   &__headline{
-    display: inline-block;
-    background: rgba(255, 0, 0, 0.1);
+
   }
   
   &__description{
-    display: inline-block;
     padding: var(--space-3) 0 0 0;
     background: rgba(0, 255, 0, 0.1);
-    p{
-      padding:0;
-      margin:0;
-    }
   }
+
+  p{
+    padding:0;
+    margin:0;
+  }
+
   &__subtitle{
     font-size: helpers.rem(14);
   }
