@@ -25,14 +25,25 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
       {projects.map((project, index) => { 
         return (
           <a href={project.url} className="projectcards__card" key={index}>
-            <Image
-              className="projectcards__thumb"
-              src={`${project.screenshot.filename}/m/800x0`}
-              width={800}
-              height={0}
-              alt={project.screenshot.alt}
-              sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)"
+            <div className="projectcards__thumb">
+              <Image
+                src={`${project.screenshot.filename}/m/800x0`}
+                width={800}
+                height={0}
+                alt={project.screenshot.alt}
+                sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)"
             />
+            </div>
+
+
+            <div className='projectcards__body'>
+              <div className='projectcards__headline'>
+                <h3>{project.name}</h3>
+              </div>
+              <div className='projectcards__description'>{render(project.description)}</div>
+            </div>
+            {/*             
+            
             <div className="projectcards__body">
               <div className="projectcards__headline">
                 <h3>{project.name}</h3>
@@ -45,7 +56,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
               <div className="projectcards__description">
                 {render(project.description)}
               </div>
-            </div>
+            </div> */}
           </a>
         );})}
     </div>

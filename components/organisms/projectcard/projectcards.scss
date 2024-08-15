@@ -8,8 +8,14 @@
   max-width: var(--size-container-300);
   &__card{
     color: var(--color-text-primary);
+    background: rgba(0, 255, 255, 0.05);
     cursor: pointer;
     border-radius: 2px;
+
+    display: grid;
+    grid-row:auto / span 2;
+    grid-template-rows: subgrid;
+    grid-gap: 0;
     &:hover, &:focus{
       background: #ebf5ff;
       color: var(--color-text-primary);
@@ -20,11 +26,16 @@
   &__thumb{
     display: block;
     border: 1px dotted orange;
+    img{
+      display:block;
+    }
   }
 
   &__body{
     padding: var(--space-5);
     border: 1px dotted blue;
+    // display: grid;
+    // grid-template-rows: subgrid;
   }
 
   &__headline{
