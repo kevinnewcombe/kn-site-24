@@ -38,7 +38,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
               <span className="projectcards__headline">
                 <h3>{project.name}</h3>
                 <DateComponent dateString={project.date} textFormat="LLLL yyyy" />
-                <span className="projectcards__subtitle">{project.role}!?</span>
+                <span className="projectcards__subtitle">{project.role}!??</span>
               </span>
               <span className="projectcards__description">
                 {render(project.description)}
