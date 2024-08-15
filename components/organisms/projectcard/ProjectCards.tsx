@@ -25,7 +25,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
       {projects.map((project, index) => { 
         return (
           <a href={project.url} className="projectcards__card" key={index}>
-            <div className="projectcards__thumb">
+            <div>
               <Image
                 src={`${project.screenshot.filename}/m/800x0`}
                 width={800}
