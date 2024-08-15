@@ -29,7 +29,7 @@ const ProjectCards: React.FC<{projects:ProjectType[]}>= ({projects}) => {
               <Image
                 src={`${project.screenshot.filename}/m/800x0`}
                 width={800}
-                height={0}
+                height={500}
                 alt={project.screenshot.alt}
                 sizes="373px, (min-width:1075px) calc(100vw / 3), (min-width:675px) calc(100vw / 2), calc(100vw - 20px)"
               />
