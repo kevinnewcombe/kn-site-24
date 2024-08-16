@@ -9,7 +9,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
+    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "blokdefs": "node ./scripts/updateStoryblokDefs.js"
   },
   "dependencies": {
     "@contentful/live-preview": "^4.2.3",
@@ -28,6 +29,8 @@
     "postcss": "8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "storyblok": "^3.32.3",
+    "storyblok-js-client": "^6.8.1",
     "storyblok-rich-text-react-renderer": "^2.9.2",
     "typescript": "^5.1.6"
   },
