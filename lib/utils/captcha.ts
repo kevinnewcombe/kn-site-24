@@ -47,4 +47,4 @@ type CaptchaData =
       "error-codes": ErrorCodes[];
     };
 
-type ErrorCodes = 'missing-input-secret' | 'invalid-input-secret' | 'missing-input-response' | 'invalid-input-response' | 'bad-request' | 'timeout-or-duplicate'
+export type ErrorCodes = 'missing-input-secret' | 'invalid-input-secret' | 'missing-input-response' | 'invalid-input-response' | 'bad-request' | 'timeout-or-duplicate'

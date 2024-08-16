@@ -4,10 +4,10 @@ import { verifyCaptchaToken } from "@/lib/utils/captcha"
 const postmark = require("postmark");
 const postmarkClient = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
 
-export async function contactUsAction(token:string | null, formData:FormData){
+export async function submitContactForm(token:string | null, formData:FormData){
   if(!formData){
     return {
-      success: false,
+      state: 'error',
       message: 'Fill out the form'
     }
   }
@@ -16,13 +16,13 @@ export async function contactUsAction(token:string | null, formData:FormData){
   const message = escape(formData.get('message') as string);
   if(!name.trim() || !email.trim() || !message.trim()){
     return {
-      success: false,
+      state: 'error',
       message: 'All form fields are required.'
     }
   }
   if(!token){
     return {
-      success: false,
+      state: 'error',
       message: "Recaptcha token not found."
     }
   }
@@ -31,19 +31,22 @@ export async function contactUsAction(token:string | null, formData:FormData){
   const captchaData = await verifyCaptchaToken(token);
   if(!captchaData){
     return {
-      success: false,
+      state: 'error',
       message: "Captcha Failed"
     }
   }
 
   if(!captchaData.success || captchaData.score < 0.5){
+    if( !captchaData.success ){
+      console.error(`Captcha error: ${captchaData["error-codes"]}`);
+    }else{
+      console.error(`Captcha score too low: ${captchaData.score} \n name: ${name} \n email: ${email} \n message: ${message}`);
+    }
     return {
-      success: false,
+      state: 'error',
       message: "Captcha Failed",
-      errors: !captchaData.success ? captchaData["error-codes"] : null
     }
   }
-
   return await sendEmail(
     name, 
     email, 
@@ -75,15 +78,20 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     HtmlBody,
   };
 
+  return {
+    state: 'success',
+    message: 'This is a hardcoded message for testing purposes. No mail was sent.'
+  }
+
   try {
     await postmarkClient.sendEmail(emailData);
     return {
-      success: true,
+      state: 'success',
       message: 'Message sent!'
     }
   } catch (error) {
     return {
-      success: false,
+      state: 'error',
       message: `${error}`
     }
   }
