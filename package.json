@@ -10,7 +10,7 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes",
     "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
-    "blokdefs": "node ./scripts/updateStoryblokDefs.js"
+    "blokprops": "source .env && storyblok login --token $STORYBLOK_OAUTH_TOKEN --region eu && storyblok pull-components --space $STORYBLOK_SPACE_ID --path .tmp/ && storyblok generate-typescript-typedefs --typeNamesSuffix Props --sourceFilePaths ./.tmp/components.$STORYBLOK_SPACE_ID.json --destinationFilePath lib/types/storyblok-component-types.d.ts && del ./.tmp/components.299841.json"
   },
   "dependencies": {
     "@contentful/live-preview": "^4.2.3",
@@ -24,7 +24,10 @@
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "10.4.15",
     "contentful-import": "^9.0.4",
+    "cross-env": "^7.0.3",
     "date-fns": "2.30.0",
+    "del-cli": "^5.1.0",
+    "dotenv": "^16.4.5",
     "next": "latest",
     "postcss": "8.4.31",
     "react": "^18.2.0",
