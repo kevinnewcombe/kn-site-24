@@ -69,7 +69,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaSans.variable} ${mulish.variable}`}>
-        <Toaster position="top-right" />
         <Header />
         <main>{children}</main>
         <Footer />
