@@ -46,7 +46,7 @@ const sampleText = (
 export const Default: Story = {
   name: '300 wide (default)',
   args: {
-    size: 300,
+    size: "300",
     children: sampleText
   },
   argTypes: {
@@ -57,7 +57,7 @@ export const Default: Story = {
         defaultValue: { summary: '300' },
       },
       control: { type: 'select' },
-      options: [250, 300],
+      options: ["250", "300"],
     },
     children: {
       description: "A ReactNode to render inside the container",
