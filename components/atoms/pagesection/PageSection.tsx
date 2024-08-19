@@ -18,12 +18,13 @@ export default PageSection;
 
 export const PageSectionStoryblok: React.FC<{blok:PageSectionProps}>= ({blok}) => {
   return (
-    <div {...storyblokEditable(blok)}>
+
     <PageSection>
+      <div {...storyblokEditable(blok)}>
       {blok.blocks.map((nestedBlok:any) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
+      </div>
     </PageSection>
-  </div>
   );
 }
