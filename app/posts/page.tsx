@@ -13,8 +13,7 @@ interface PostStoryPreviewProps {
 
 
 export default async function Page() {
-  notFound();
-  /* 
+  // notFound();
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories`, {
     version: "published",
@@ -36,6 +35,5 @@ export default async function Page() {
       ))}
     </>
   );
-  */
 
 }

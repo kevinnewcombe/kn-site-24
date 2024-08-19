@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import DateComponent from '@/components/atoms/date/Date'
 import './post.scss'
 import Link from "next/link";
-
+import { PostProps } from "@/lib/types/storyblok-component-types";
 
 /**
  * A full blog post
@@ -24,7 +24,7 @@ export const Post: React.FC<{title:string, date:string, children:ReactNode, edit
 }
 export default Post;
 
-export const PostStoryblok: React.FC<{blok:any}>= ({blok}) => {
+export const PostStoryblok: React.FC<{blok:PostProps}>= ({blok}) => {
   return (
     <div {...storyblokEditable(blok)}>
     {blok.body?.map((nestedBlok:any) => (

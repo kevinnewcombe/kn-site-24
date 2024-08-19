@@ -11,7 +11,7 @@ export default async function Page({
 }) {
   const { data } = await fetchStoryBySlug(`posts/${params.slug}`);
   return !data.error ? 
-    <Post title={ data.story.name } date={ data.story.published_at } editURL={`${process.env.storyblokPreviewURLBase}${data.story.id}`}>
+    <Post title={ data.story.name } date={ data.story.published_at } editURL={`https://app.storyblok.com/#/me/spaces/${process.env.storyblokSpaceID}/stories/0/0/${data.story.id}`}>
       <StoryblokComponent blok={data.story.content} /></Post> : null;
 }
 
@@ -20,9 +20,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  notFound();
+  // notFound();
   
-  /* 
+  
   const { data } = await fetchStoryBySlug(`posts/${params.slug}`);
   if(data.error){
     notFound();
@@ -30,7 +30,6 @@ export async function generateMetadata({
   return {
     title: data.story.name
   }
-    */
 }
 
 /* 

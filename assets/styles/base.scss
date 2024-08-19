@@ -33,10 +33,10 @@ main{
   margin: 0 auto;
   width: 100%;
   max-width: var(--size-container-300);
-  padding: var(--space-5) 0;
+  padding: var(--space-5);
   text-align: left;
   @media #{$mq-min-md}{
-    padding: var(--space-10) 0;
+    padding: var(--space-20) var(--space-5);
   }
 }
 

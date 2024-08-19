@@ -13,8 +13,7 @@ import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
 import { HtmlEmbedStoryblok } from "@/components/atoms/htmlembed/HtmlEmbed";
 import { SizeContainerStoryblok } from "@/components/atoms/sizecontainer/SizeContainer";
-import { Toaster } from "react-hot-toast";
-
+import { PageSectionStoryblok } from "@/components/atoms/pagesection/PageSection";
 
 
 storyblokInit({
@@ -28,12 +27,13 @@ storyblokInit({
     projectCards: ProjectCardsStoryblok,
     htmlEmbed: HtmlEmbedStoryblok,
     sizeContainer: SizeContainerStoryblok,
+    PageSection: PageSectionStoryblok,
   }
 });
 
 export const metadata = {
-  title: `Kevin Newcombe`,
-  description: `Kevin Newcombe, front-end developer`,
+  title: `Kevin Newcombe | Front-end Developer`,
+  description: `The portfolio of Kevin Newcombe, front-end developer.`,
   metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`),
   openGraph: {
     images: [

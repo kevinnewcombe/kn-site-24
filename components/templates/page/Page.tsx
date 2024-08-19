@@ -1,11 +1,12 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { PageProps } from "@/lib/types/storyblok-component-types";
 import './page.scss'
 
 /**
  * Storyblok Page component
  */
 
-const Page: React.FC<{blok:any}>= ({blok}) => {
+const Page: React.FC<{blok:PageProps}>= ({blok}) => {
   return (
     <div {...storyblokEditable(blok)}>
     {blok.body?.map((nestedBlok:any) => (
