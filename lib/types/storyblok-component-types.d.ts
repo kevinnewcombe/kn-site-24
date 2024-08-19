@@ -21,6 +21,7 @@ export interface PageProps {
     | MetaProps
     | PageProps
     | PageIntroProps
+    | PageSectionProps
     | PostProps
     | ProjectCardProps
     | ProjectCardsProps
@@ -49,6 +50,24 @@ export interface PageIntroProps {
   [k: string]: any;
 }
 
+export interface PageSectionProps {
+  blocks: (
+    | HtmlEmbedProps
+    | MetaProps
+    | PageProps
+    | PageIntroProps
+    | PageSectionProps
+    | PostProps
+    | ProjectCardProps
+    | ProjectCardsProps
+    | RichTextProps
+    | SizeContainerProps
+  )[];
+  component: "PageSection";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface AssetProps {
   alt?: string;
   copyright?: string;
@@ -66,6 +85,7 @@ export interface PostProps {
     | MetaProps
     | PageProps
     | PageIntroProps
+    | PageSectionProps
     | PostProps
     | ProjectCardProps
     | ProjectCardsProps
@@ -113,6 +133,7 @@ export interface SizeContainerProps {
     | MetaProps
     | PageProps
     | PageIntroProps
+    | PageSectionProps
     | PostProps
     | ProjectCardProps
     | ProjectCardsProps
