@@ -9,22 +9,21 @@ import { PageSectionProps } from '@/lib/types/storyblok-component-types';
 const PageSection: React.FC<{children:ReactNode}>= ({children}) => {
   return (
     <section className="pagesection">
-    { children }
-  </section>
+      { children }
+    </section>
   );
 }
-
 
 export default PageSection;
 
 export const PageSectionStoryblok: React.FC<{blok:PageSectionProps}>= ({blok}) => {
   return (
     <div {...storyblokEditable(blok)}>
-      <PageSection>
-        {blok.blocks.map((nestedBlok: any) => (
-          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-        ))}
-      </PageSection>
-    </div>
+    <PageSection>
+      {blok.blocks.map((nestedBlok:any) => (
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+      ))}
+    </PageSection>
+  </div>
   );
 }

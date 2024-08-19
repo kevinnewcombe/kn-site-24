@@ -113,7 +113,7 @@ export interface ProjectCardProps {
 }
 
 export interface ProjectCardsProps {
-  projects?: ProjectCardProps[];
+  projects: ProjectCardProps[];
   component: "projectCards";
   _uid: string;
   [k: string]: any;

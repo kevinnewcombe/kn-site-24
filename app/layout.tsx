@@ -13,7 +13,7 @@ import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
 import { ProjectCardsStoryblok } from "@/components/organisms/projectcard/ProjectCards";
 import { HtmlEmbedStoryblok } from "@/components/atoms/htmlembed/HtmlEmbed";
 import { SizeContainerStoryblok } from "@/components/atoms/sizecontainer/SizeContainer";
-import PageSectionStoryblok from "@/components/atoms/pagesection/PageSection";
+import { PageSectionStoryblok } from "@/components/atoms/pagesection/PageSection";
 
 
 storyblokInit({
