@@ -27,7 +27,7 @@ const ContactForm: React.FC<{}>= ({}) => {
   }
 
   return (
-    <div className="vertical-horizontal-center">
+    <div>
       {formStatus.state === "success" && <h3>{formStatus.message}</h3>}
       {formStatus.state !== "success" && (
         <form onSubmit={handleSubmit}>
@@ -59,3 +59,4 @@ const ContactForm: React.FC<{}>= ({}) => {
 }
 
 export default ContactForm;
+

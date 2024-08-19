@@ -19,7 +19,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  // notFound();
+  notFound();
   const { data } = await fetchStoryBySlug(params.slug);
   if(data.error){
     notFound();

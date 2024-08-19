@@ -7,6 +7,7 @@ import Footer from '@/components/organisms/footer/Footer';
 import Script from "next/script";
 
 import Page from "@/components/templates/page/Page";
+import ContactForm from "@/components/organisms/contactform/ContactForm";
 import { PostStoryblok } from "@/components/templates/post/Post";
 import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
@@ -28,6 +29,7 @@ storyblokInit({
     htmlEmbed: HtmlEmbedStoryblok,
     sizeContainer: SizeContainerStoryblok,
     PageSection: PageSectionStoryblok,
+    ContactForm: ContactForm
   }
 });
 

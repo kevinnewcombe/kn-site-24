@@ -78,10 +78,10 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
     HtmlBody,
   };
 
-  return {
-    state: 'success',
-    message: 'This is a hardcoded message for testing purposes. No mail was sent.'
-  }
+  // return {
+  //   state: 'success',
+  //   message: 'This is a hardcoded message for testing purposes. No mail was sent.'
+  // }
 
   try {
     await postmarkClient.sendEmail(emailData);
