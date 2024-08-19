@@ -28,7 +28,7 @@ const description = {
 
 const screenshot = {
   id: 1234,
-  filename: "https://a.storyblok.com/f/299841/552x345/85e37de850/screenshot_2024-06-25_at_2-57-23_pm.png",
+  filename: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjM2NDMzNDl8&ixlib=rb-4.0.3&q=85&w=1000&h=750",
   alt: "This is alt text",
   name: 'screenshot_1234'
 };

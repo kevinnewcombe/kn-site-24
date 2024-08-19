@@ -24,7 +24,7 @@ const sampleText = (
       Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla
       facilisi. Sed sit amet est porta, fringilla nisl id, tincidunt augue.
     </p>
-    <img src="https://picsum.photos/1000/750" alt="placeholder image" />
+    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjM2NDMzNDl8&ixlib=rb-4.0.3&q=85&w=1000&h=750" alt="placeholder image" />
     <ul>
       <li>
         Nunc dictum, mi vel vestibulum condimentum, lacus quam accumsan velit,
