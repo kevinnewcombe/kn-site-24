@@ -68,7 +68,7 @@ export const Default: Story = {
 export const Size250: Story = {
   name: '250',
   args: {
-    size: 250,
+    size: '250',
     children: sampleText
   },
 };
