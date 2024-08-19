@@ -1,8 +1,8 @@
 import './sizecontainer.scss'
 import { ReactNode } from 'react';
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
-type SizeProps = 250 | 300;
-
+type SizeProps = '250' | '300' | '';
+import { SizeContainerProps } from '@/lib/types/storyblok-component-types';
 /**
  * SizeContainer description goes here
  */
@@ -18,7 +18,7 @@ const SizeContainer: React.FC<{size:SizeProps, children:ReactNode}>= ({size = 30
 export default SizeContainer;
 
 
-export const SizeContainerStoryblok: React.FC<{blok:any}>= ({blok}) => {
+export const SizeContainerStoryblok: React.FC<{blok:SizeContainerProps}>= ({blok}) => {
   return (
     <div {...storyblokEditable(blok)}>
       <SizeContainer size={blok.size}>

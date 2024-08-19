@@ -16,7 +16,7 @@ export interface MetaProps {
 }
 
 export interface PageProps {
-  body?: (
+  body: (
     | HtmlEmbedProps
     | MetaProps
     | PageProps
@@ -61,7 +61,7 @@ export interface AssetProps {
 }
 
 export interface PostProps {
-  body?: (
+  body: (
     | HtmlEmbedProps
     | MetaProps
     | PageProps
@@ -81,12 +81,12 @@ export interface PostProps {
 }
 
 export interface ProjectCardProps {
-  name?: string;
-  url?: string;
-  date?: string;
-  role?: string;
-  description?: RichtextProps;
-  screenshot?: AssetProps;
+  name: string;
+  url: string;
+  date: string;
+  role: string;
+  description: RichtextProps;
+  screenshot: AssetProps;
   component: "projectCard";
   _uid: string;
   [k: string]: any;
@@ -100,14 +100,14 @@ export interface ProjectCardsProps {
 }
 
 export interface RichTextProps {
-  content?: RichtextProps;
+  content: RichtextProps;
   component: "richText";
   _uid: string;
   [k: string]: any;
 }
 
 export interface SizeContainerProps {
-  size?: "" | "250" | "300";
+  size: "250" | "300" | "";
   children?: (
     | HtmlEmbedProps
     | MetaProps
