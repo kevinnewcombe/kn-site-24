@@ -1,5 +1,5 @@
 # kevin-newcombe.com | site 24
-Next.js + Storybook + Storyblok
+Next.js + Storyblok + Storybook
 
 ## Scripts
 * `npm run dev` starts the https proxy server & Next.js server
@@ -8,6 +8,7 @@ Next.js + Storybook + Storyblok
 * `npm run start` serves the most recent Next.js build
 * `npm run storybook` starts the Storybook development server
 * `npm run chromatic` creates a new Storybook build on Chromatic
+* `npm run blokprops` creates typescript properties for Storyblok components
 * `plop` creates a new element
 
 ### Links

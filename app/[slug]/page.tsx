@@ -11,15 +11,12 @@ export default async function Page({
   return !data.error ? <StoryblokComponent blok={data.story.content} /> : null;
 }
 
-
-
-
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }) {
-  notFound();
+  // notFound();
   const { data } = await fetchStoryBySlug(params.slug);
   if(data.error){
     notFound();
