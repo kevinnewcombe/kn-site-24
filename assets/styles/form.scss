@@ -27,7 +27,7 @@ input, textarea{
   }
 
   &:user-invalid{
-    border-color: #dc221e;
+    border-color: var(--color-error);
   }
 
 }

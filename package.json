@@ -30,6 +30,7 @@
     "postmark": "^4.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "schema-dts": "^1.1.2",
     "storyblok": "^3.32.3",
     "storyblok-rich-text-react-renderer": "^2.9.2",
     "typescript": "^5.1.6"
