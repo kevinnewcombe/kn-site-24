@@ -18,7 +18,7 @@ export const Default: Story = {
       description: "A date to pass to the PostPreview component",
       control: 'date'
     },
-  },
+  }, 
   args: {
     title: 'How to stain a deck',
     date: 'October 31, 2021',
