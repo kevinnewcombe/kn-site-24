@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import Post from './Post';
 
 const meta: Meta<typeof Post> = {
@@ -14,6 +13,9 @@ type Story = StoryObj<typeof Post>;
 export const Default: Story = {
   name: "Post",
   argTypes: {
+    date: {
+      description: "A date to pass to the PostPreview component",
+    },
     editURL: {
       description: "The URL to edit the post in Storyblok. Only displays when the node env is \"development\"",
     },  
@@ -54,5 +56,6 @@ export const Default: Story = {
       </>
     ),
   },
+
 };
 

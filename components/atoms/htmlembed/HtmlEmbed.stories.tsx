@@ -14,11 +14,11 @@ type Story = StoryObj<typeof HtmlEmbed>;
 export const Default: Story = {
   name: 'HtmlEmbed',
   args: {
-    html: '<p>Lorem ipsum <strong>dolor</strong>\n<a href="#">sit</a></p>\n<ul>\n<li>amet</li>\n<li>consectetur</li>\n</ul>'
+    html: "<p>Here's a paragraph tag with <a href=\"#\">links</a> and <sup>superscript</sup> and <strong>strong text</strong> and even some <span id=\"red\"><style>#red{ color: #f00; }</style> inline style tags.</p>"
   },
-  argTypes: { // https://storybook.js.org/docs/api/arg-types
+  argTypes: { 
     html: {
-      description: "A string of raw HTML to be rendered."
+      description: "A string of raw HTML to be rendered. "
     }
   }
 };

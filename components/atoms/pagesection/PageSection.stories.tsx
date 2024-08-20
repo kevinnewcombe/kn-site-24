@@ -20,6 +20,13 @@ export const Default: Story = {
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed et pretium nibh. In vulputate velit sed lectus tristique, nec posuere nisl suscipit. Aliquam vulputate diam ex, et malesuada mi mollis non. Donec vehicula orci quis iaculis tristique.</p>
       </>
     )
+  },
+  argTypes: { 
+    children: {
+      description: "A React node to be rendered inside the PageSection."
+    }
   }
+
+  
 };
 
