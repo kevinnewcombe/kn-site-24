@@ -1,12 +1,13 @@
 
 import "./base.scss";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
- 
 import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
+import Script from "next/script";
 
 import Page from "@/components/templates/page/Page";
+import ContactForm from "@/components/organisms/contactform/ContactForm";
 import { PostStoryblok } from "@/components/templates/post/Post";
 import { PageIntroStoryblok } from "@/components/organisms/pageintro/PageIntro";
 import { RichTextStoryblok } from "@/components/atoms/richtext/RichText";
@@ -28,6 +29,7 @@ storyblokInit({
     htmlEmbed: HtmlEmbedStoryblok,
     sizeContainer: SizeContainerStoryblok,
     PageSection: PageSectionStoryblok,
+    ContactForm: ContactForm
   }
 });
 
@@ -67,12 +69,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <html lang="en">
-        <body className={ `${firaSans.variable} ${mulish.variable}` }>
-          <Header />
-            <main>{children}</main>
-          <Footer />
-        </body>
-      </html>
+    <html lang="en">
+      <body className={`${firaSans.variable} ${mulish.variable}`}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <Script
+          strategy="beforeInteractive"
+          // defer
+          // type="text/javascript"
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
+        />
+      </body>
+    </html>
   );
 }

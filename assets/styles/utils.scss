@@ -1,0 +1,17 @@
+.grecaptcha-badge{
+  display: none;
+}
+
+.vertical-horizontal-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-text{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-error);
+}
+
+

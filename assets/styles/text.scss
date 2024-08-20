@@ -13,9 +13,9 @@ h1{
 
 h2{
   font-size: helpers.rem(28);
+  margin-bottom: var(--space-5);
   line-height: 1.33;
 }
-
 
 h3{
   font-size: helpers.rem(20);
@@ -47,7 +47,6 @@ code{
 ul{
   padding:0 0 0 1rem;
 }
-
 li p{
   margin:0;
   padding:0;

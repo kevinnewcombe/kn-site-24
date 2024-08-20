@@ -2,6 +2,6 @@
 
 .pagesection{
   &:not(:last-child){
-    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-15);
   }
 }

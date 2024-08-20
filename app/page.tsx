@@ -7,7 +7,7 @@ export default async function Page() {
     notFound();
   }
   return (
-      <StoryblokComponent blok={data.story.content} />
+    <StoryblokComponent blok={data.story.content} />
   );
 }
 
