@@ -90,6 +90,7 @@ async function sendEmail(name:string, email:string, message:string, recaptchaSco
       message: 'Message sent!'
     }
   } catch (error) {
+    console.error(`Postmark error: ${error} \n name: ${name} \n email: ${email} \n message: ${message}`);
     return {
       state: 'error',
       message: `${error}`

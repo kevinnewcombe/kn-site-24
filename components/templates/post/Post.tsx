@@ -15,7 +15,6 @@ export const Post: React.FC<{title:string, date:string, children:ReactNode, edit
       <div className="post__headline">
         <h1>{title}</h1>
         { process.env.NODE_ENV === 'development' && <Link href={editURL}>Edit this page</Link> }
-
         <DateComponent dateString={ date } textFormat="LLLL d, yyyy" />
       </div>
       { children }
