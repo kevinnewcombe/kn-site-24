@@ -1,6 +1,8 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import { PostPreview } from "@/components/molecules/postpreview/PostPreview";
+import { getAllPosts } from "@/lib/api";
 import { notFound } from 'next/navigation';
+const storyblokApi = getStoryblokApi();
 interface PostStoryPreviewProps {
   name: string;
   uuid: string;
@@ -13,13 +15,7 @@ interface PostStoryPreviewProps {
 
 
 export default async function Page() {
-  notFound();
-  const storyblokApi = getStoryblokApi();
-  const { data } = await storyblokApi.get(`cdn/stories`, {
-    version: "published",
-    starts_with: 'posts/',
-    is_startpage: false
-  });
+  const data = await getAllPosts();
 
   return (
     <>
@@ -35,16 +31,14 @@ export default async function Page() {
       ))}
     </>
   );
-
 }
 
-
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  notFound();
-
+export async function generateMetadata() {
+  const data = await getAllPosts();
+  if(!data.stories.length){
+    notFound();
+  }
+  return {
+    title: 'Kevin Newcombe | posts'
+  }
 }
