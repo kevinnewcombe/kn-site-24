@@ -13,7 +13,10 @@ type Story = StoryObj<typeof Post>;
 export const Default: Story = {
   name: "Post",
   argTypes: {
-    date: {
+    createdDate: {
+      description: "A date to pass to the PostPreview component",
+    },
+    publishedDate: {
       description: "A date to pass to the PostPreview component",
     },
     editURL: {
@@ -22,7 +25,8 @@ export const Default: Story = {
   },
   args: {
     title: "A really great headline",
-    date: "2024-08-07T14:12:49.807Z",
+    createdDate: "2023-06-07T14:12:49.807Z",
+    publishedDate: "2024-08-07T14:12:49.807Z",
     editURL: "https://app.storyblok.com/#!/me/spaces/12345/stories/67890/edit",
     children: (
       <>
