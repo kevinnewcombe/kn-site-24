@@ -13,6 +13,12 @@ type Story = StoryObj<typeof PostPreview>;
 
 export const Default: Story = {
   name: 'PostPreview',
+  argTypes: {
+    date: {
+      description: "A date to pass to the PostPreview component",
+      control: 'date'
+    },
+  },
   args: {
     title: 'How to stain a deck',
     date: 'October 31, 2021',

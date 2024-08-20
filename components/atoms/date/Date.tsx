@@ -1,8 +1,9 @@
 import './date.scss'
 import { format } from "date-fns";
 /**
- * Date component
+ * Formatted `time` element for displaying dates.
  */
+
 
 const DateComponent: React.FC<{dateString: string, textFormat:string}>= ({dateString, textFormat}) => {
   return (

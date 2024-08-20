@@ -18,5 +18,13 @@ export const Default: Story = {
     dateString: 'October 31, 2000',
     textFormat: 'LLLL d, yyyy'
   },
+  argTypes: {
+    dateString: {
+      description:'Must follow any format <a href="https://date-fns.org/v3.6.0/docs/format">supported by date-fns</a>.'
+    },
+    textFormat: {
+      description: 'Must follow the format outlined <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values">here</a>.'
+    }
+  }
 };
 
