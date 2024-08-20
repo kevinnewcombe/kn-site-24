@@ -8,6 +8,7 @@ Next.js + Storybook + Storyblok
 * `npm run start` serves the most recent Next.js build
 * `npm run storybook` starts the Storybook development server
 * `npm run chromatic` creates a new Storybook build on Chromatic
+* `npm run blokprops` creates new typescript properties for the Storyblok components
 * `plop` creates a new element
 
 ### Links
