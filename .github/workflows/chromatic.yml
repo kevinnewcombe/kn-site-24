@@ -1,0 +1,34 @@
+# .github/workflows/chromatic.yml
+
+name: "Chromatic"
+
+on: push
+
+jobs:
+  chromatic:
+    name: Run Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code...
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
+        run: npm ci
+      - name: Set secrets
+        run: | # Secrets needed on the server
+          echo "POSTMARK_SERVER_TOKEN=${{secrets.POSTMARK_SERVER_TOKEN}}" >> .env
+          echo "NEXT_PUBLIC_CAPTCHA_SITE_KEY=${{secrets.NEXT_PUBLIC_CAPTCHA_SITE_KEY}}" >> .env
+          echo "CAPTCHA_SECRET_KEY=${{secrets.CAPTCHA_SECRET_KEY}}" >> .env
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # ignoreLastBuildOnBranch: "main" # 👈 Option to ignore the last build on target branch
+          autoAcceptChanges: "main" # 👈 Option to accept all changes on main
+

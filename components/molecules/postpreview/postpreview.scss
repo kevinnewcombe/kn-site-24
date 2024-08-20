@@ -1,0 +1,16 @@
+@use "/assets/styles/helpers";
+
+.postpreview{
+  margin-bottom: var(--space-5);
+  &__name{
+    font-size: helpers.rem(18);
+    font-weight: 700;
+    display:block;
+  }
+
+  &__excerpt{
+    font-size: helpers.rem(16);
+    padding:0 auto auto;
+    margin-top: 0;
+  }
+}

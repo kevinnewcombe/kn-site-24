@@ -1,0 +1,42 @@
+@use "/assets/styles/helpers";
+@import "/assets/styles/sizes.scss";
+
+.header{
+  width: 100%;
+  padding: var(--space-5) var(--space-3);
+  text-align: center;
+  @media #{$mq-min-md}{
+    padding: var(--space-10) 0;
+    text-align: unset;
+    display: flex;
+    align-items: center;
+  }
+
+  img{
+    width: min( 100%, 200px );
+    height: auto;
+  }
+  &__nav{        
+    flex: 1;
+    ul {
+      padding:0;
+      list-style-type: none;
+      gap: var(--space-5);
+      @media #{$mq-min-md}{
+        text-align: right;
+      }
+    }
+    li{
+      display: inline-block;
+    }
+    a{
+      font-family: var(--font-firasans), serif;
+      font-size: helpers.rem(20);
+      font-weight: 600;
+      padding: var(--space-3);
+      @media #{$mq-min-md}{
+
+      }
+    }
+  }
+}

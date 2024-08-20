@@ -1,0 +1,7 @@
+@use "/assets/styles/helpers";
+
+.pagesection{
+  &:not(:last-child){
+    padding-bottom: var(--space-15);
+  }
+}

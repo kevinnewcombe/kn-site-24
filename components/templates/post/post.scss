@@ -1,0 +1,11 @@
+@use "/assets/styles/helpers";
+
+.post{
+  width: 100%;
+  margin: 0 auto;
+  max-width: var(--size-container-300);
+
+  &__headline{
+    margin-bottom: var(--space-5);
+  }
+}

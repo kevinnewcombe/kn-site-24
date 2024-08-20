@@ -1,0 +1,57 @@
+@use "/assets/styles/helpers";
+
+.projectcards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-10);
+  max-width: var(--size-container-300);
+  &__card{
+    --border-color: rgb(253, 238, 209);
+    color: var(--color-text-primary);
+    cursor: pointer; 
+    border-radius: 3px;
+    overflow: hidden;
+    grid-row: span 3; 
+    display: grid;
+    grid-template-rows: subgrid;
+    gap: 0;
+
+    &:hover, &:focus{
+      background: #ebf5ff;
+      color: var(--color-text-primary);
+      text-decoration: none;
+      --border-color: #57a7f7;
+    }
+  }
+
+  &__body{
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    gap:0;
+    padding: var(--space-5);
+    border-width: 0 1px 1px;
+    border-style: dotted;
+    border-color: var(--border-color);
+  }
+
+  &__headline{
+    // background: rgba(255, 0, 0, 0.1);
+  }
+
+  &__description{
+    padding: var(--space-3) 0 0 0;
+  }
+
+  &__subtitle{
+    font-size: helpers.rem(14);
+  }
+
+  img{
+    display:block;
+  }
+
+  p{
+    margin:0;
+  }
+} 

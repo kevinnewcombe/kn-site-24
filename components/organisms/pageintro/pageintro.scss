@@ -1,0 +1,9 @@
+@use "/assets/styles/helpers";
+
+.pageintro{
+  p{
+    font-size: helpers.rem(20);
+    line-height: 1.66;
+    text-wrap: balance;
+  }
+}

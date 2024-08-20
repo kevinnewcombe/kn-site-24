@@ -1,0 +1,48 @@
+@import "/assets/styles/sizes.scss";
+html{
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: var(--font-mulish), sans-serif;
+  min-height: 100vh;
+  font-size:.9375rem;
+  line-height: 1.33;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background: var(--color-page-bg);
+  color: var(--color-primary-text);
+  margin: 0;
+  padding: 0 var(--space-3);
+  @media #{$mq-min-md}{
+    padding: 0 var(--space-10);
+  }
+}
+
+main{
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--size-container-300);
+  padding: var(--space-5);
+  text-align: left;
+  @media #{$mq-min-md}{
+    padding: var(--space-20) var(--space-5);
+  }
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+

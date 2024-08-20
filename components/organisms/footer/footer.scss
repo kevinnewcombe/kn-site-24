@@ -1,0 +1,37 @@
+@use "/assets/styles/helpers";
+@import "/assets/styles/sizes.scss";
+
+.footer{
+  padding: 0 var(--space-3);
+  margin-top: var(--space-3);
+  text-align: center;
+  @media #{$mq-min-md}{
+    margin-top: var(--space-10);
+    padding: 0 var(--space-10);
+  }
+
+  &__nav{
+    border-top:1px solid var(--color-border);
+    padding: var(--space-3) 0;
+    @media #{$mq-min-md}{
+      padding: var(--space-10) 0;
+    }
+  }
+  ul {
+    padding:0;
+    list-style-type: none;
+    gap: var(--space-5);
+  }
+
+  li{
+    display: inline-block;
+  }
+
+  a{
+    font-family: var(--font-firasans), serif;
+    font-size: helpers.rem(20);
+    font-weight: 600;
+    padding: var(--space-3);
+  }
+
+}

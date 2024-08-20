@@ -1,0 +1,53 @@
+@use './helpers.scss';
+
+h1, h2, h3{
+  color: var(--color-headline-text);
+  margin:0;
+  font-weight: 700;
+}
+
+h1{
+  font-size: helpers.rem(40);
+  font-weight: 700;
+}
+
+h2{
+  font-size: helpers.rem(28);
+  margin-bottom: var(--space-5);
+  line-height: 1.33;
+}
+
+h3{
+  font-size: helpers.rem(20);
+  line-height: 1.33;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-anchor);
+  transition-duration: var(--transition-duration);
+  &:hover{
+    text-decoration: underline;
+    color: var(--color-anchor-hover);
+  }
+}
+
+p{
+  font-size: helpers.rem(16);
+  line-height: 1.5;
+}
+
+code{
+  padding: var(--space-5);
+  white-space: pre-wrap;
+  background: var(--color-bg-surface-secondary);
+  display: inline-block;
+}
+
+ul{
+  padding:0 0 0 1rem;
+}
+li p{
+  margin:0;
+  padding:0;
+}

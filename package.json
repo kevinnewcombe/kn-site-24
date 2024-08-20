@@ -1,0 +1,53 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run proxy\" \"next\"",
+    "next": "next",
+    "build": "next build",
+    "start": "next start",
+    "plop": "plop",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
+    "blokprops": "source .env && storyblok login --token $STORYBLOK_OAUTH_TOKEN --region eu && storyblok pull-components --space $STORYBLOK_SPACE_ID --path .tmp/ && storyblok generate-typescript-typedefs --typeNamesSuffix Props --sourceFilePaths ./.tmp/components.$STORYBLOK_SPACE_ID.json --destinationFilePath lib/types/storyblok-component-types.d.ts && del ./.tmp/components.$STORYBLOK_SPACE_ID.json"
+  },
+  "dependencies": {
+    "@storyblok/react": "^3.0.10",
+    "@storybook/addon-a11y": "^8.2.8",
+    "@storybook/addon-storysource": "^8.2.8",
+    "@types/grecaptcha": "^3.0.9",
+    "@types/node": "^20.5.0",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "10.4.15",
+    "cross-env": "^7.0.3",
+    "date-fns": "2.30.0",
+    "del-cli": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "next": "^14.2.5",
+    "postcss": "8.4.31",
+    "postmark": "^4.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storyblok": "^3.32.3",
+    "storyblok-rich-text-react-renderer": "^2.9.2",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.8",
+    "@storybook/addon-interactions": "^8.2.8",
+    "@storybook/blocks": "^8.2.8",
+    "@storybook/nextjs": "^8.2.8",
+    "@storybook/react": "^8.2.8",
+    "@storybook/test": "^8.2.8",
+    "chromatic": "^11.5.4",
+    "concurrently": "^8.2.2",
+    "plop": "^4.0.1",
+    "sass": "^1.77.6",
+    "storybook": "^8.2.8"
+  },
+  "name": "kevin-newcombe-site-24",
+  "version": ""
+}
