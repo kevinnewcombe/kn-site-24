@@ -14,9 +14,8 @@ export default async function Page({
   if(data.error){
     notFound();
   }
-  return !data.error ? 
-    <Post title={ data.story.name } date={ data.story.published_at } editURL={`https://app.storyblok.com/#/me/spaces/${process.env.storyblokSpaceID}/stories/0/0/${data.story.id}`}>
-      <StoryblokComponent blok={data.story.content} /></Post> : null;
+  return  <Post title={ data.story.name } date={ data.story.published_at } editURL={`https://app.storyblok.com/#/me/spaces/${process.env.storyblokSpaceID}/stories/0/0/${data.story.id}`}>
+      <StoryblokComponent blok={data.story.content} /></Post> 
 }
 
 export async function generateMetadata({

@@ -73,3 +73,12 @@ export const Size250: Story = {
   },
 };
 
+
+export const Size125: Story = {
+  name: '125',
+  args: {
+    size: '125',
+    children: sampleText
+  },
+};
+

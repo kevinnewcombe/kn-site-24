@@ -1,7 +1,7 @@
 import './sizecontainer.scss'
 import { ReactNode } from 'react';
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
-type SizeProps = '250' | '300' | '';
+type SizeProps = '125' | '250' | '300' | '';
 import { SizeContainerProps } from '@/lib/types/storyblok-component-types';
 /**
  * Limit the max width of a container.<br />

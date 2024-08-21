@@ -2,6 +2,9 @@
 
 .sizecontainer{
   margin: 0 auto;
+  &__125{
+    max-width: var(--space-125);
+  }
 
   &__250{
     max-width: var(--space-250);
