@@ -10,11 +10,11 @@ export const Header: React.FC<{}>= () => {
     <header className="header">
       <Link href="/" className="header__logo"><img src="/images/logo-full.svg" alt="Kevin Newcombe"/></Link>
       
-      {/* <nav className="header__nav">
+      <nav className="header__nav">
         <ul>
-          <li><Link href="/posts">Articles</Link></li>
+          <li><Link href="/posts">Posts</Link></li>
         </ul>
-      </nav> */}
+      </nav>
     </header>
   );
 }
