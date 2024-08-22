@@ -8,13 +8,13 @@ import Link from 'next/link';
 export const Header: React.FC<{}>= () => {
   return (
     <header className="header">
-      <Link href="/" className="header__logo"><img src="/images/logo-full.svg" alt="Kevin Newcombe"/></Link>
       
-      {/* <nav className="header__nav">
-        <ul>
-          <li><Link href="/posts">Articles</Link></li>
-        </ul>
-      </nav> */}
+      <Link href="/">
+        <img src="/images/logo-full.svg" alt="Kevin Newcombe" />
+      </Link> 
+      <nav className="header__nav">
+        <Link href="/posts">Posts</Link>
+      </nav>
     </header>
   );
 }

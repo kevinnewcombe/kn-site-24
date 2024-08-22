@@ -23,18 +23,15 @@ body{
   background: var(--color-page-bg);
   color: var(--color-primary-text);
   margin: 0;
-  padding: 0 var(--space-3);
-  @media #{$mq-min-md}{
-    padding: 0 var(--space-10);
-  }
+
 }
 
 main{
   margin: 0 auto;
   width: 100%;
   max-width: var(--size-container-300);
-  padding: var(--space-5);
   text-align: left;
+  padding: var(--space-5);
   @media #{$mq-min-md}{
     padding: var(--space-20) var(--space-5);
   }
