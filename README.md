@@ -8,7 +8,7 @@ Built with Next.js + Storybook + Storyblok
 * `npm run storybook` starts the Storybook development server
 * `npm run chromatic` creates a new Storybook build on Chromatic
 * `npm run blokprops` creates new typescript properties for the Storyblok components
-* `plop` creates a new element
+* `plop` creates a new folder for a React component containing a basic scss, storybook, and tsx file
 
 ### Links
 * [live site](https://kevin-newcombe.com/)
