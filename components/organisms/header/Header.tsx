@@ -12,9 +12,7 @@ export const Header: React.FC<{}>= () => {
       <Link href="/">
         <img src="/images/logo-full.svg" alt="Kevin Newcombe" />
       </Link> 
-      <nav className="header__nav">
-        <Link href="/posts">Posts</Link>
-      </nav>
+
     </header>
   );
 }
