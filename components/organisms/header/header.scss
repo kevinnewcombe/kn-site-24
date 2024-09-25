@@ -4,31 +4,31 @@
 .header{
   width: 100%;
   padding: var(--space-5) var(--space-5);
-  text-align: center;
   gap:var(--space-3);
   display:flex;
   flex-direction: column;
+  display: flex;
+  flex-direction: row;
   @media #{$mq-min-md}{
     padding: var(--space-10) var(--space-5);
-    text-align: unset;
-    display: flex;
-    flex-direction: row;
   }
-
   img{
     width: 200px;
     display: block;
     margin: 0 auto;
   }
   &__nav{        
-    flex-grow: 1;
-    @media #{$mq-min-md}{
-      text-align: right;
-    }
+    margin-left: var(--space-3);
     a{
       font-family: var(--font-firasans), serif;
       font-size: helpers.rem(20);
       font-weight: 600;
     }
+  }
+
+  &__util{
+    align-content: center;
+    text-align: right;
+    flex-grow: 1;
   }
 }

@@ -15,6 +15,9 @@ export const Header: React.FC<{}>= () => {
       <nav className="header__nav">
         <Link href="/posts">Posts</Link>
       </nav>
+      <div className="header__util">
+        {/* theme toggle button goes here */}
+      </div>
     </header>
   );
 }
