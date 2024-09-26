@@ -5,26 +5,28 @@
   margin:0;
   border:none;
   cursor: pointer;
-  background: #fff;
-  background: light-dark(#fff, #eee);
-  color: #000;
+  background: transparent;
+  path{
+    stroke-width:10;
+    stroke-linecap: round;
+    stroke: var(--color-secondary-text);
+    fill: transparent;
+    transition: stroke var(--transition-duration);
+  }
   &__icon{
     width: 200px;
     width: 32px;
-    path{
-      stroke-width:10;
-      stroke-linecap: round;
-      stroke: #000;
-      // stroke: light-dark(#000, #fff);
-      fill: transparent;
-    }
   }
 
   &__rays{
     path{
       stroke-dasharray: 5 110; 
       stroke-dashoffset: inherit;
-      // stroke-dashoffset: var(--stroke-offset);
+    }
+  }
+  &:hover{
+    path{
+      stroke: light-dark(#ffa100, #fff56f);
     }
   }
 }

@@ -19,7 +19,6 @@ const BtnColorScheme: React.FC = () => {
   const transitionDuration = 250;
   const {theme, setTheme } = useTheme(); // returns either 'light', 'dark', or 'system'
   const [progress, setProgress] = useState<number>(-1);
-  const [progressTarget, setProgressTarget] = useState<number>(-1);
   useEffect(() => {
     setProgress( theme === 'dark' ? 0 : 1 );
 		setMounted(true);
@@ -29,7 +28,6 @@ const BtnColorScheme: React.FC = () => {
   const toggleTheme = () =>{
     const currentTheme = theme;
     setTheme( currentTheme === 'dark' ? 'light' : 'dark' );
-    setProgressTarget(currentTheme === 'dark' ? 1 : 0 );
     let start = Date.now();
     const playAnimation = () =>{
       const interval = Date.now() - start;
@@ -40,7 +38,7 @@ const BtnColorScheme: React.FC = () => {
     }
     requestAnimationFrame(playAnimation);
   }
-
+  // svg animation variables
   const offsetDegrees = 45 * progress;
   const shapeSize = 8 + progress * 18;
   const outerRadius = 50 - shapeSize;

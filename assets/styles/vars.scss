@@ -2,22 +2,22 @@
 
   
   // colors
-  --color-anchor:  #0068d7;
+  --color-anchor:  light-dark(#0068d7, #bedcfc);
   --color-anchor-light: #bedcfc;
-  --color-anchor-hover:  #0054ae;
-  --color-headline-text: #222;
-  --color-primary-text: #222;
-  --color-secondary-text: #707070;
-  --color-page-bg: #fff;
+  --color-anchor-hover:  light-dark(#0054ae, #80b8f5);;
+  --color-headline-text: light-dark(#222, #fff);
+  --color-primary-text: light-dark(#222, #fff);
+  --color-secondary-text: light-dark(#707070, #eee);
+  --color-page-bg: light-dark(#fff, #222);
 
   --color-border: #d7d7d7;
   --color-border-hover: #aaa;
   --color-border-focus: #333;
   --color-border-secondary: #eeeeee;
-  // --color-bg-surface: #fff;
   --color-bg-surface-secondary: #f7f7f7;
   --color-error: #d61c19;
 
+  --color-dark-mode-hover: light-dark(#0054ae, #fff56f);
   // spacing
   --space-1: 4px;
   --space-2: 8px;
