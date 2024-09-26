@@ -1,5 +1,6 @@
 import './header.scss'
 import Link from 'next/link';
+import BtnColorScheme from '@/components/atoms/btncolorscheme/BtnColorScheme';
 
 /**
  * Site Header
@@ -16,7 +17,7 @@ export const Header: React.FC<{}>= () => {
         <Link href="/posts">Posts</Link>
       </nav>
       <div className="header__util">
-        {/* theme toggle button goes here */}
+        <BtnColorScheme isLightMode={ true } />
       </div>
     </header>
   );
