@@ -9,6 +9,7 @@
   flex-direction: column;
   display: flex;
   flex-direction: row;
+  align-items: center;
   @media #{$mq-min-md}{
     padding: var(--space-10) var(--space-5);
   }
