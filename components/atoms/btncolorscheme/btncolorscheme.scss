@@ -5,15 +5,17 @@
   margin:0;
   border:none;
   cursor: pointer;
-  background: light-dark(#fff, #000);
-
+  background: #fff;
+  background: light-dark(#fff, #eee);
+  color: #000;
   &__icon{
     width: 200px;
     width: 32px;
     path{
       stroke-width:10;
       stroke-linecap: round;
-      stroke: light-dark(#000, #fff);
+      stroke: #000;
+      // stroke: light-dark(#000, #fff);
       fill: transparent;
     }
   }
