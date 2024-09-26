@@ -16,33 +16,26 @@ const coords = (deg:number, shapeSize:number, radius:number) => {
 
 const BtnColorScheme: React.FC = () => {
   const [mounted, setMounted] = useState(false);
-  const transitionDuration = 2000;
-  const {theme, setTheme } = useTheme();
+  const transitionDuration = 250;
+  const {theme, setTheme } = useTheme(); // returns either 'light', 'dark', or 'system'
   const [progress, setProgress] = useState<number>(-1);
   const [progressTarget, setProgressTarget] = useState<number>(-1);
   useEffect(() => {
-    console.log( `theme: ${theme}` );
-    setProgress( theme === 'light' ? 1 : 0 );
+    setProgress( theme === 'dark' ? 0 : 1 );
 		setMounted(true);
 	}, []);
 
-  let start;
-  let requestID: number;
 
-  function toggleTheme(){
-    // 0: moon / currently dark theme
-    // 1: sun / currently light theme
+  const toggleTheme = () =>{
     const currentTheme = theme;
-    setTheme( currentTheme === 'light' ? 'dark' : 'light' );
-    setProgressTarget(currentTheme === 'light' ? 0 : 1 );
-
+    setTheme( currentTheme === 'dark' ? 'light' : 'dark' );
+    setProgressTarget(currentTheme === 'dark' ? 1 : 0 );
     let start = Date.now();
-
-    function playAnimation() {
+    const playAnimation = () =>{
       const interval = Date.now() - start;
-      setProgress(Math.max(0, Math.min(1, progressTarget ? 1 - (interval / transitionDuration) : (interval / transitionDuration))));
+      setProgress(Math.min(1, Math.max((currentTheme === 'dark') ? (interval / transitionDuration) : 1 - (interval / transitionDuration), 0)));
       if(interval < transitionDuration){
-        requestID = requestAnimationFrame(playAnimation);
+        requestAnimationFrame(playAnimation);
       }
     }
     requestAnimationFrame(playAnimation);
@@ -74,19 +67,12 @@ const BtnColorScheme: React.FC = () => {
 		return null;
 	}
   return (
-    <>
-      <div>
-        progress : { Math.round( progress * 100 )}<br />
-        progressTarget : {progressTarget} <br />
-        theme: { theme }
-      </div>
+
       <button 
         type="button" 
         className="btncolorscheme" 
         onClick={ toggleTheme } 
         aria-label="Toggle light and dark color scheme" 
-        
-        // style={{`--stroke-offset`: (progress * -40) } as CSSProperties}
         style={{strokeDashoffset: (progress * -40) }}
         >
         <svg viewBox="0 0 100 100" className="btncolorscheme__icon" role="img"> 
@@ -107,8 +93,6 @@ const BtnColorScheme: React.FC = () => {
           </g>
         </svg>
       </button>
-    </>
-    
   );
 }
 
