@@ -1,5 +1,27 @@
 @use "/assets/styles/helpers";
 
 .btncolorscheme{
+  padding: 6px;
+  margin:0;
+  // background: #fff;
+  border:none;
   cursor: pointer;
+
+  &__icon{
+    width: 200px;
+    width: 32px;
+    path{
+      stroke-width:10;
+      stroke-linecap: round;
+      stroke: #000;
+      fill: transparent;
+    }
+  }
+
+  &__rays{
+    path{
+      stroke-dasharray: 5 110; 
+      stroke-dashoffset: var(--stroke-offset);
+    }
+  }
 }
