@@ -12,14 +12,6 @@ export default meta;
 type Story = StoryObj<typeof BtnColorScheme>;
 
 export const Default: Story = {
-  name: 'Default',
-  args: {
-    // Add default values here
-  },
-  argTypes: { // https://storybook.js.org/docs/api/arg-types
-    example: {
-      description: "Description for 'Example' arg"
-    }
-  }
+  name: 'Default'
 };
 

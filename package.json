@@ -40,6 +40,7 @@
     "@storybook/addon-essentials": "^8.3.2",
     "@storybook/addon-interactions": "^8.3.2",
     "@storybook/blocks": "^8.3.2",
+    "@storybook/manager-api": "^8.3.3",
     "@storybook/nextjs": "^8.3.2",
     "@storybook/react": "^8.3.2",
     "@storybook/test": "^8.3.2",
@@ -47,7 +48,8 @@
     "concurrently": "^8.2.2",
     "plop": "^4.0.1",
     "sass": "^1.77.6",
-    "storybook": "^8.3.2"
+    "storybook": "^8.3.2",
+    "storybook-dark-mode": "^4.0.2"
   },
   "name": "kevin-newcombe-site-24",
   "version": ""

@@ -1,9 +1,8 @@
 'use client'
 /**
- * Button for toggling light / dark mode
+ * Formatted `time` element for displaying dates.
  */
 
-/* there's a wierd jump that happens when the page loads with dark mode */
 import { useState, useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import './btncolorscheme.scss'
@@ -23,7 +22,6 @@ const BtnColorScheme: React.FC = () => {
     setProgress( theme === 'dark' ? 0 : 1 );
 		setMounted(true);
 	}, []);
-
 
   const toggleTheme = () =>{
     const currentTheme = theme;
