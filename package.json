@@ -26,6 +26,7 @@
     "del-cli": "^5.1.0",
     "dotenv": "^16.4.5",
     "next": "^14.2.5",
+    "next-themes": "^0.3.0",
     "postcss": "8.4.31",
     "postmark": "^4.0.4",
     "react": "^18.2.0",

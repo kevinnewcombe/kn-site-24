@@ -5,6 +5,7 @@ import { Fira_Sans, Mulish } from 'next/font/google'
 import Header from "@/components/organisms/header/Header";
 import Footer from '@/components/organisms/footer/Footer';
 import Script from "next/script";
+import { Providers } from './providers';
 
 import Page from "@/components/templates/page/Page";
 import ContactForm from "@/components/organisms/contactform/ContactForm";
@@ -71,15 +72,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaSans.variable} ${mulish.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Script
-          strategy="beforeInteractive"
-          // defer
-          // type="text/javascript"
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
-        />
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Script
+            strategy="beforeInteractive"
+            // defer
+            // type="text/javascript"
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
+          />
+          </Providers>
       </body>
     </html>
   );
