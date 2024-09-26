@@ -3,9 +3,9 @@
 .btncolorscheme{
   padding: 6px;
   margin:0;
-  // background: #fff;
   border:none;
   cursor: pointer;
+  background: light-dark(#fff, #000);
 
   &__icon{
     width: 200px;
@@ -13,7 +13,7 @@
     path{
       stroke-width:10;
       stroke-linecap: round;
-      stroke: #000;
+      stroke: light-dark(#000, #fff);
       fill: transparent;
     }
   }
@@ -21,7 +21,8 @@
   &__rays{
     path{
       stroke-dasharray: 5 110; 
-      stroke-dashoffset: var(--stroke-offset);
+      stroke-dashoffset: inherit;
+      // stroke-dashoffset: var(--stroke-offset);
     }
   }
 }

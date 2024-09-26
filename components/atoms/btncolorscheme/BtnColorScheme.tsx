@@ -11,6 +11,8 @@ const BtnColorScheme: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const {theme, setTheme } = useTheme();
   const [progress, setProgress] = useState<number>(theme === 'dark' ? 1 : 0);
+
+  
   useEffect(() => {
 		setMounted(true);
 	}, []);
@@ -37,13 +39,16 @@ const BtnColorScheme: React.FC = () => {
 	if (!mounted) {
 		return null;
 	}
+  const style = { "--my-css-var": 10 } as React.CSSProperties;
   return (
     <button 
       type="button" 
       className="btncolorscheme" 
       onClick={ toggleTheme } 
       aria-label="Toggle light and dark color scheme" 
+      
       // style={{`--stroke-offset`: (progress * -40) } as CSSProperties}
+      style={{strokeDashoffset: (progress * -40) }}
       >
       <svg viewBox="0 0 100 100" className="btncolorscheme__icon" role="img"> 
         <mask id="btncolorscheme__mask">
