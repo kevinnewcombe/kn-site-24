@@ -15,7 +15,10 @@ const coords = (deg:number, shapeSize:number, radius:number) => {
 type inheritedThemeProps = null | 'light' | 'dark';
 
 const BtnColorScheme: React.FC<{inheritedTheme:inheritedThemeProps}>= ({inheritedTheme}) => {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+  let prefersReducedMotion = { matches: false }
+  if (typeof window !== "undefined") {
+    prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  }
   const [mounted, setMounted] = useState(false);
   const transitionDuration = (prefersReducedMotion.matches) ? 0 : 250;
   const {theme, setTheme} = useTheme(); // returns either 'light', 'dark', or 'system'

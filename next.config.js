@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  darkMode: 'class',
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
