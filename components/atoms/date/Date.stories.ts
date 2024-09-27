@@ -6,7 +6,6 @@ const meta: Meta<typeof Date> = {
   title: 'Atoms/Date',
   component: Date,
   tags: ['autodocs'],
-
 };
 
 export default meta;

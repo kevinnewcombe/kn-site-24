@@ -1,0 +1,32 @@
+@use "/assets/styles/helpers";
+
+.btncolorscheme{
+  padding: 6px;
+  margin:0;
+  border:none;
+  cursor: pointer;
+  background: transparent;
+  path{
+    stroke-width:10;
+    stroke-linecap: round;
+    stroke: var(--color-secondary-text);
+    fill: transparent;
+    transition: stroke var(--transition-duration);
+  }
+  &__icon{
+    width: 200px;
+    width: 32px;
+  }
+
+  &__rays{
+    path{
+      stroke-dasharray: 5 110; 
+      stroke-dashoffset: inherit;
+    }
+  }
+  &:hover{
+    path{
+      stroke: light-dark(#ffa100, #fff56f);
+    }
+  }
+}

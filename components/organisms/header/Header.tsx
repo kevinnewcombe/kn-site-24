@@ -1,5 +1,6 @@
 import './header.scss'
 import Link from 'next/link';
+import BtnColorScheme from '@/components/atoms/btncolorscheme/BtnColorScheme';
 
 /**
  * Site Header
@@ -15,6 +16,9 @@ export const Header: React.FC<{}>= () => {
       <nav className="header__nav">
         <Link href="/posts">Posts</Link>
       </nav>
+      <div className="header__util">
+        <BtnColorScheme inheritedTheme={ null } />
+      </div>
     </header>
   );
 }
