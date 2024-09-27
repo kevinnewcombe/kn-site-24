@@ -12,20 +12,28 @@ const coords = (deg:number, shapeSize:number, radius:number) => {
   return `${((radius * Math.sin(radians) + radius) + shapeSize)} ${((radius * Math.cos(radians) + radius) + shapeSize)}`
 }
 
+type inheritedThemeProps = null | 'light' | 'dark';
 
-const BtnColorScheme: React.FC = () => {
+const BtnColorScheme: React.FC<{inheritedTheme:inheritedThemeProps}>= ({inheritedTheme}) => {
   const [mounted, setMounted] = useState(false);
   const transitionDuration = 250;
-  const {theme, setTheme } = useTheme(); // returns either 'light', 'dark', or 'system'
-  const [progress, setProgress] = useState<number>(-1);
+  const {theme, setTheme} = useTheme(); // returns either 'light', 'dark', or 'system'
+  const [progress, setProgress] = useState<number>((inheritedTheme || theme)=== 'dark' ? 0 : 1);
+  const [lightDark, setLightDark] = useState<inheritedThemeProps>(inheritedTheme); // for Storybook
   useEffect(() => {
-    setProgress( theme === 'dark' ? 0 : 1 );
+    if(inheritedTheme){
+      setProgress( inheritedTheme === 'dark' ? 0 : 1 );
+    }else{
+      setProgress( theme === 'dark' ? 0 : 1 );
+    }
 		setMounted(true);
 	}, []);
 
   const toggleTheme = () =>{
-    const currentTheme = theme;
-    setTheme( currentTheme === 'dark' ? 'light' : 'dark' );
+    const currentTheme = theme || lightDark;
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark' ;
+    setTheme( newTheme);
+    setLightDark( newTheme );
     let start = Date.now();
     const playAnimation = () =>{
       const interval = Date.now() - start;
@@ -71,7 +79,7 @@ const BtnColorScheme: React.FC = () => {
         aria-label="Toggle light and dark color scheme" 
         style={{strokeDashoffset: (progress * -40) }}
         >
-        <svg viewBox="0 0 100 100" className="btncolorscheme__icon" role="img"> 
+        <svg viewBox="0 0 100 100" className="btncolorscheme__icon" role="img" aria-hidden="true"> 
           <mask id="btncolorscheme__mask">
             <rect width="100" height="100" fill="#fff"/>
             <circle cx="50" cy="50" r="34" fill="#000" />

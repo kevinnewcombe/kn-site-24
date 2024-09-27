@@ -17,7 +17,7 @@ export const Header: React.FC<{}>= () => {
         <Link href="/posts">Posts</Link>
       </nav>
       <div className="header__util">
-        <BtnColorScheme />
+        <BtnColorScheme inheritedTheme={ null } />
       </div>
     </header>
   );
