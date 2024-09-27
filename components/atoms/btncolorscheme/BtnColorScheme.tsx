@@ -15,8 +15,9 @@ const coords = (deg:number, shapeSize:number, radius:number) => {
 type inheritedThemeProps = null | 'light' | 'dark';
 
 const BtnColorScheme: React.FC<{inheritedTheme:inheritedThemeProps}>= ({inheritedTheme}) => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
   const [mounted, setMounted] = useState(false);
-  const transitionDuration = 250;
+  const transitionDuration = (prefersReducedMotion.matches) ? 0 : 250;
   const {theme, setTheme} = useTheme(); // returns either 'light', 'dark', or 'system'
   const [progress, setProgress] = useState<number>((inheritedTheme || theme)=== 'dark' ? 0 : 1);
   const [lightDark, setLightDark] = useState<inheritedThemeProps>(inheritedTheme); // for Storybook
