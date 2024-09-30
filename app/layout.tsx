@@ -74,12 +74,10 @@ export default function RootLayout({
       <body className={`${firaSans.variable} ${mulish.variable}`}>
         <Providers>
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer />
           <Script
             strategy="beforeInteractive"
-            // defer
-            // type="text/javascript"
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
           />
           </Providers>

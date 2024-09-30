@@ -2,6 +2,7 @@
 @import "/assets/styles/sizes.scss";
 
 .header{
+  position: relative;
   width: 100%;
   padding: var(--space-5) var(--space-5);
   gap:var(--space-3);
@@ -31,5 +32,21 @@
     align-content: center;
     text-align: right;
     flex-grow: 1;
+  }
+
+  &__skiplink{
+    background: var(--color-anchor);
+    color: var(--color-page-bg);
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: var(--space-2) var(--space-4);
+    position: absolute;
+    left: -100vw;
+    transition-duration: 0;
+    &:focus{
+      color: var(--color-page-bg);
+      left:var(--space-5);
+    }
   }
 }

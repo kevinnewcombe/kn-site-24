@@ -1,6 +1,6 @@
 'use client'
 /**
- * Formatted `time` element for displaying dates.
+ * Light / dark mode toggle
  */
 
 import { useState, useEffect, useRef } from 'react';
