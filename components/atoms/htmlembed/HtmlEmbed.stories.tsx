@@ -14,7 +14,7 @@ type Story = StoryObj<typeof HtmlEmbed>;
 export const Default: Story = {
   name: 'HtmlEmbed',
   args: {
-    html: "<p>Here's a paragraph tag with <a href=\"#\">links</a> and <sup>superscript</sup> and <strong>strong text</strong> and even some <span id=\"red\"><style>#red{ color: #8B0000; }</style> inline style tags.</p>"
+    html: "<p>Here's a paragraph tag with <a href=\"#\">links</a> and <sup>superscript</sup> and <strong>strong text</strong>."
   },
   argTypes: { 
     html: {
