@@ -9,7 +9,7 @@ import BtnColorScheme from '@/components/atoms/btncolorscheme/BtnColorScheme';
 export const Header: React.FC<{}>= () => {
   return (
     <header className="header">
-      <a href="#main" className="header__skiplink" tabIndex={1}>Skip to Content</a>
+      <a href="#main" className="header__skiplink">Skip to Content</a>
       <Link href="/">
         <img src="/images/logo-full.svg" alt="Kevin Newcombe" />
       </Link> 
