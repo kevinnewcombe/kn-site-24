@@ -35,17 +35,18 @@ const ContactForm: React.FC<{}>= ({}) => {
             <strong className={`error-text`}>{formStatus.message}</strong>
           )}
           <fieldset disabled={formStatus.state == "sending"}>
+            <legend className="visually-hidden">Enter your contact info and message</legend>
             <label>
               <span className="labeltext">Name</span>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="name" autoComplete="given-name" required />
             </label>
             <label>
               <span className="labeltext">Email</span>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" autoComplete="email" required />
             </label>
             <label>
               <span className="labeltext">Message</span>
-              <textarea id="message" name="message" required />
+              <textarea id="message" name="message" autoComplete="off" required />
             </label>
             <input
               type="submit"

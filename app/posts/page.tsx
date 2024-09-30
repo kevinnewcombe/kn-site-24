@@ -8,6 +8,7 @@ export default async function Page() {
   const data = await fetchAllPosts();
   return (
     <>
+      <h1>All Posts</h1>
       {data.stories.map((post: PostStoryPreviewProps) => (
         <PostPreview
           key={post.uuid}
