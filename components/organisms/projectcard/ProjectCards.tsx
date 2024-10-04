@@ -30,7 +30,7 @@ const ProjectCards: React.FC<{projects:ProjectCardProps[]}>= ({projects}) => {
                 <DateComponent
                   dateString={project.date}
                   textFormat="LLLL yyyy"
-                />
+                /><br />
                 <span className="projectcards__subtitle">{project.role}</span> 
               </div>
               <div className="projectcards__description">

@@ -8,4 +8,9 @@
   &__headline{
     margin-bottom: var(--space-5);
   }
+
+  &__dateprefix{
+    font-size: helpers.rem(14);
+    color: var(--color-secondary-text);
+  }
 }

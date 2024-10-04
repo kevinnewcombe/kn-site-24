@@ -38,6 +38,19 @@ export const metadata = {
   title: `Kevin Newcombe | Front-end Developer`,
   description: `The portfolio of Kevin Newcombe, front-end developer.`,
   metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`),
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     images: [
       { 
