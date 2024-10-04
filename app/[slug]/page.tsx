@@ -19,7 +19,6 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  notFound();
   const { data } = await fetchStoryBySlug(params.slug);
   if(data.error){
     notFound();

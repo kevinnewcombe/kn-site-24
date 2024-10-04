@@ -13,7 +13,7 @@ export default async function Page() {
         <PostPreview
           key={post.uuid}
           title={post.name}
-          date={post.published_at}
+          date={post.created_at	}
           slug={post.full_slug}
           excerpt={post.content.description}
         />
