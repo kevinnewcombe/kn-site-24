@@ -32,9 +32,15 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get("cdn/links/", {
-    version: process.env.storyblokPageVersion as pageVersionProps,
-  });
+  let { data } = await storyblokApi.get(
+    "cdn/links/",
+    {
+      version: process.env.storyblokPageVersion as pageVersionProps,
+    },
+    {
+      cache: "no-store",
+    }
+  );
   let paths: { slug: string }[] = [];
  
   Object.keys(data.links).forEach((linkKey) => {

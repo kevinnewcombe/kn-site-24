@@ -13,7 +13,7 @@
     "blokprops": "source .env && storyblok login --token $STORYBLOK_OAUTH_TOKEN --region eu && storyblok pull-components --space $STORYBLOK_SPACE_ID --path .tmp/ && storyblok generate-typescript-typedefs --typeNamesSuffix Props --sourceFilePaths ./.tmp/components.$STORYBLOK_SPACE_ID.json --destinationFilePath lib/types/storyblok-component-types.d.ts && del ./.tmp/components.$STORYBLOK_SPACE_ID.json"
   },
   "dependencies": {
-    "@storyblok/react": "^3.0.10",
+    "@storyblok/react": "^3.0.14",
     "@storybook/addon-a11y": "^8.3.3",
     "@storybook/addon-storysource": "^8.3.3",
     "@types/grecaptcha": "^3.0.9",
@@ -31,7 +31,7 @@
     "postmark": "^4.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storyblok": "^3.33.3",
+    "storyblok": "^3.34.0",
     "storyblok-rich-text-react-renderer": "^2.9.2",
     "typescript": "^5.1.6"
   },

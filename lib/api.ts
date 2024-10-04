@@ -19,6 +19,8 @@ export async function fetchAllPosts(){
     version: process.env.storyblokPageVersion as pageVersionProps,
     starts_with: 'posts/',
     is_startpage: false
+  }, {
+    cache: "no-store"
   });
   return data;
 }

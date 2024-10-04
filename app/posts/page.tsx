@@ -31,5 +31,4 @@ export async function generateMetadata() {
   return {
     title: 'Kevin Newcombe | Posts'
   }
-
 }
