@@ -27,8 +27,13 @@ export async function generateMetadata({
   if(data.error){
     notFound();
   }
+
   return {
-    title: `${data.story.name}`
+    title: `${data.story.name}`,
+    openGraph: {
+      type: 'article',
+      publishedTime: new Date(data.story.created_at).toISOString()
+    }
   }
 }
 
@@ -41,3 +46,6 @@ export async function generateStaticParams() {
   })}
   return paths;
 }
+
+
+
