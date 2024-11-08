@@ -11,7 +11,7 @@ export const Header: React.FC<{}>= () => {
     <header className="header">
       <a href="#main" className="header__skiplink">Skip to Content</a>
       <Link href="/">
-        <img src="/images/logo-full.svg" alt="Kevin Newcombe" />
+        <img src="/images/logo-full.svg" alt="Kevin Newcombe" width="200" height="26"/>
       </Link> 
       <nav className="header__nav">
         <Link href="/posts">Posts</Link>
