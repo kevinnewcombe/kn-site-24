@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
           <li><Link href="https://www.linkedin.com/in/kevinnewcombe/">LinkedIn</Link></li>
           <li><Link href="https://codepen.io/kevinnewcombe">CodePen</Link></li>
           <li><Link href="https://github.com/kevinnewcombe">Github</Link></li>
+          <li><Link href="https://bsky.app/profile/kevinnewcombe.bsky.social">Bluesky</Link></li>
         </ul>
       </nav>
     </footer>
