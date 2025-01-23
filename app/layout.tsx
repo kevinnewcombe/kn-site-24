@@ -7,6 +7,7 @@ import Footer from '@/components/organisms/footer/Footer';
 import Script from "next/script";
 import { Providers } from './providers';
 
+
 import Page from "@/components/templates/page/Page";
 import ContactForm from "@/components/organisms/contactform/ContactForm";
 import { PostStoryblok } from "@/components/templates/post/Post";
@@ -94,6 +95,11 @@ export default function RootLayout({
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
           />
           </Providers>
+
+          <Script
+            src="/scripts/console.js"
+            strategy="afterInteractive" // lazyOnload, afterInteractive
+          />
       </body>
     </html>
   );
