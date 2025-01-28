@@ -85,16 +85,34 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <Script
+          id={`Cookiebot`}
+          async={true}
+          src={`https://consent.cookiebot.com/uc.js`}
+          strategy={`beforeInteractive`}
+          data-cbid={`e601416f-7771-4824-bd41-b61661aa4798`}
+          data-blockingmode={`auto`}
+          type={`text/javascript`}
+        />
+
+    {/* <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e601416f-7771-4824-bd41-b61661aa4798"  type="text/javascript"></script> */}
+      </head>
       <body className={`${firaSans.variable} ${mulish.variable}`}>
         <Providers>
           <Header />
           <main id="main">{children}</main>
-          <Script
+
+          {/* <Script
             src="/scripts/console.js"
             strategy="afterInteractive" // lazyOnload, afterInteractive
-          />
-          <Footer />
+          /> */}
+
+
+
+            <Footer />
         </Providers>
+
 
       </body>
     </html>
