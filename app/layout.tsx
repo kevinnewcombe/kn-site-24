@@ -95,22 +95,21 @@ export default function RootLayout({
           data-blockingmode={`auto`}
           type={`text/javascript`}
         />
-
-    {/* <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e601416f-7771-4824-bd41-b61661aa4798"  type="text/javascript"></script> */}
       </head>
       <body className={`${firaSans.variable} ${mulish.variable}`}>
         <Providers>
           <Header />
           <main id="main">{children}</main>
+            <Footer />
 
           {/* <Script
             src="/scripts/console.js"
             strategy="afterInteractive" // lazyOnload, afterInteractive
           /> */}
-
-
-
-            <Footer />
+            <Script
+            strategy="beforeInteractive"
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
+          />
         </Providers>
 
 
