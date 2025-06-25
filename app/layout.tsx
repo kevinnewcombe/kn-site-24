@@ -90,12 +90,15 @@ export default function RootLayout({
           <Header />
           <main id="main">{children}</main>
           <Script
+            src="/scripts/console.js"
+            strategy="afterInteractive" // lazyOnload, afterInteractive
+          />
+          <Script
             strategy="beforeInteractive"
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
           />
           <Footer />
         </Providers>
-
       </body>
     </html>
   );
