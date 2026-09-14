@@ -17,7 +17,7 @@
     "@storybook/addon-a11y": "^8.3.3",
     "@storybook/addon-storysource": "^8.3.3",
     "@types/grecaptcha": "^3.0.9",
-    "@types/node": "^20.5.0",
+    "@types/node": "^24.0.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "10.4.15",
@@ -25,6 +25,7 @@
     "date-fns": "2.30.0",
     "del-cli": "^5.1.0",
     "dotenv": "^16.4.5",
+    "escape-html": "^1.0.3",
     "next": "^14.2.13",
     "next-themes": "^0.3.0",
     "postcss": "8.4.31",
@@ -51,6 +52,9 @@
     "storybook": "^8.3.3",
     "storybook-dark-mode": "^4.0.2"
   },
+  "engines": {
+  "node": ">=24.0.0"
+},
   "name": "kevin-newcombe-site-24",
   "version": ""
 }
