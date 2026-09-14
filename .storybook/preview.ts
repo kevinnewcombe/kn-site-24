@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/nextjs-vite";
 import '../app/base.scss';
 const preview: Preview = {
   parameters: {
@@ -8,11 +8,16 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+
     darkMode: {
       stylePreview: true,
       classTarget: 'html',
       darkClass: 'dark',
       lightClass: 'light'
+    },
+
+    docs: {
+      codePanel: true
     }
   },
 };
