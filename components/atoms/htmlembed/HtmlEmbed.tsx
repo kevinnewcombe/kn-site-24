@@ -4,20 +4,20 @@ import { HtmlEmbedProps } from "@/lib/types/storyblok-component-types";
  * Embed raw HTML snippets for things like CodePens.
  */
 
-const HtmlEmbed: React.FC<{html:string}>= ({html}) => {
+const HtmlEmbed: React.FC<{ html: string }> = ({ html }) => {
   return (
     <div
-      dangerouslySetInnerHTML={{__html: html }}
+      dangerouslySetInnerHTML={{ __html: html }}
     />
   );
 }
 
 export default HtmlEmbed;
 
-export const HtmlEmbedStoryblok: React.FC<{blok:HtmlEmbedProps}>= ({blok}) => {
+export const HtmlEmbedStoryblok = ({ blok }: HtmlEmbedProps) => {
   return (
     <div {...storyblokEditable(blok)}>
-      <HtmlEmbed html={ blok.snippet } />
+      <HtmlEmbed html={blok.snippet} />
     </div>
   );
 }

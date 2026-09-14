@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite' with { "resolution-mode": "import" };
 import Post from './Post';
 
 const meta: Meta<typeof Post> = {

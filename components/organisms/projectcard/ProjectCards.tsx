@@ -8,12 +8,12 @@ import { ProjectCardsProps, ProjectCardProps } from '@/lib/types/storyblok-compo
  * Card layout for projects
  */
 
-const ProjectCards: React.FC<{projects:ProjectCardProps[]}>= ({projects}) => {
+const ProjectCards: React.FC<{ projects: ProjectCardProps[] }> = ({ projects }) => {
   return (
     <div className="projectcards">
-      {projects.map((project, index) => { 
+      {projects.map((project, index) => {
         return (
-          <a href={ project.url } className="projectcards__card" key={index}>
+          <a href={project.url} className="projectcards__card" key={index}>
             <div>
               <Image
                 src={`${project.screenshot.filename}/m/800x0`}
@@ -26,26 +26,27 @@ const ProjectCards: React.FC<{projects:ProjectCardProps[]}>= ({projects}) => {
 
             <div className="projectcards__body">
               <div className="projectcards__headline">
-              <h3>{project.name}</h3>
+                <h3>{project.name}</h3>
                 <DateComponent
                   dateString={project.date}
                   textFormat="LLLL yyyy"
                 /><br />
-                <span className="projectcards__subtitle">{project.role}</span> 
+                <span className="projectcards__subtitle">{project.role}</span>
               </div>
               <div className="projectcards__description">
                 {render(project.description)}
               </div>
             </div>
           </a>
-        );})}
+        );
+      })}
     </div>
   );
 }
 
 export default ProjectCards;
 
-export const ProjectCardsStoryblok: React.FC<{blok:ProjectCardsProps}>= ({blok}) => {
+export const ProjectCardsStoryblok = ({ blok }: ProjectCardsProps) => {
   return (
     <div {...storyblokEditable(blok)}>
       <ProjectCards projects={blok.projects} />

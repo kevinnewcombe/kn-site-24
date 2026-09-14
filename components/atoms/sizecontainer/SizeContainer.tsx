@@ -21,7 +21,7 @@ const SizeContainer: React.FC<{size:SizeProps, children:ReactNode}>= ({size = 30
 export default SizeContainer;
 
 
-export const SizeContainerStoryblok: React.FC<{blok:SizeContainerProps}>= ({blok}) => {
+export const SizeContainerStoryblok = ({ blok }: SizeContainerProps) => {
   return (
     <div {...storyblokEditable(blok)}>
       <SizeContainer size={blok.size}>

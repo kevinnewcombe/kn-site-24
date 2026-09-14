@@ -6,13 +6,13 @@ import './page.scss'
  * Storyblok Page component
  */
 
-const Page: React.FC<{blok:PageProps}>= ({blok}) => {
+const Page = ({ blok }: PageProps) => {
   return (
     <div {...storyblokEditable(blok)}>
-    {blok.body?.map((nestedBlok:any) => (
-      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-    ))}
-  </div>
+      {blok.body?.map((nestedBlok: any) => (
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+      ))}
+    </div>
   );
 }
 

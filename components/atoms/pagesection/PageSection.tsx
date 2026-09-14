@@ -16,7 +16,7 @@ const PageSection: React.FC<{children:ReactNode}>= ({children}) => {
 
 export default PageSection;
 
-export const PageSectionStoryblok: React.FC<{blok:PageSectionProps}>= ({blok}) => {
+export const PageSectionStoryblok = ({ blok }: PageSectionProps) => {
   return (
 
     <PageSection>

@@ -1,5 +1,6 @@
 {
   "private": true,
+  
   "scripts": {
     "dev": "concurrently \"npm run proxy\" \"next\"",
     "next": "next",

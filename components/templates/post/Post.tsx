@@ -11,15 +11,15 @@ import { PostProps } from "@/lib/types/storyblok-component-types";
  * A full blog post
  */
 
-const checkAreSameDay = (a:string, b:string) =>{
+const checkAreSameDay = (a: string, b: string) => {
   const aDate = new Date(a);
   const bDate = new Date(b);
   return aDate.getFullYear() === bDate.getFullYear() && aDate.getMonth() === bDate.getMonth() && aDate.getDate() === bDate.getDate()
 }
-export const Post: React.FC<{title:string, created_at:string, last_modified:string|null, children:ReactNode, editURL:string}>= ({title, created_at, last_modified, children, editURL}) => {
+export const Post: React.FC<{ title: string, created_at: string, last_modified: string | null, children: ReactNode, editURL: string }> = ({ title, created_at, last_modified, children, editURL }) => {
   let last_modified_block = <></>
-  if(last_modified){
-    if(!checkAreSameDay(last_modified,  created_at)){
+  if (last_modified) {
+    if (!checkAreSameDay(last_modified, created_at)) {
       last_modified_block = (
         <>
           <br />
@@ -32,22 +32,22 @@ export const Post: React.FC<{title:string, created_at:string, last_modified:stri
     <article className="post">
       <div className="post__headline">
         <h1>{title}</h1>
-        { process.env.NODE_ENV === 'development' && <><Link href={editURL}>Edit this page</Link><br /></> }
-          <span className="post__dateprefix">Posted:</span> <DateComponent dateString={ created_at } textFormat="LLLL d, yyyy" />
-        { last_modified_block }
+        {process.env.NODE_ENV === 'development' && <><Link href={editURL}>Edit this page</Link><br /></>}
+        <span className="post__dateprefix">Posted:</span> <DateComponent dateString={created_at} textFormat="LLLL d, yyyy" />
+        {last_modified_block}
       </div>
-      { children }
+      {children}
     </article>
   );
 }
 export default Post;
 
-export const PostStoryblok: React.FC<{blok:PostProps}>= ({blok}) => {
+export const PostStoryblok = ({ blok }: PostProps) => {
   return (
     <div {...storyblokEditable(blok)}>
-    {blok.body?.map((nestedBlok:any) => (
-      <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-    ))}
-  </div>
+      {blok.body?.map((nestedBlok: any) => (
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+      ))}
+    </div>
   );
 }
