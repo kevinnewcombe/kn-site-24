@@ -1,6 +1,6 @@
 import { fetchStoryBySlug, fetchAllPosts } from "@/lib/api";
 import { notFound } from 'next/navigation';
-import { StoryblokComponent } from "@storyblok/react/rsc";
+import { StoryblokComponent } from "@storyblok/react";
 import Post from "@/components/templates/post/Post";
 
 import { PostStoryPreviewProps } from "@/lib/types/posts"; 

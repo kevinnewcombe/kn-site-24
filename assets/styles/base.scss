@@ -1,4 +1,4 @@
-@import "/assets/styles/sizes.scss";
+@use "/assets/styles/sizes.scss" as sizes;
 html{
   box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
@@ -36,7 +36,7 @@ main{
   max-width: var(--size-container-300);
   text-align: left;
   padding: var(--space-5);
-  @media #{$mq-min-md}{
+  @media #{sizes.$mq-min-md}{
     padding: var(--space-20) var(--space-5);
   }
 }

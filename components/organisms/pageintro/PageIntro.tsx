@@ -17,7 +17,7 @@ const PageIntro: React.FC<{title:string|undefined, children:ReactNode}>= ({title
 }
 export default PageIntro;
 
-export const PageIntroStoryblok: React.FC<{blok:PageIntroProps}>= ({blok}) => {
+export const PageIntroStoryblok = ({ blok }: PageIntroProps) => {
   return (
     <div {...storyblokEditable(blok)}>
       <PageIntro title={blok.title}>
