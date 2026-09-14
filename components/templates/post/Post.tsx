@@ -1,5 +1,5 @@
 
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import { ReactNode } from 'react';
 import DateComponent from '@/components/atoms/date/Date'

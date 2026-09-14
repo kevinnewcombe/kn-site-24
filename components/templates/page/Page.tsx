@@ -1,4 +1,4 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { PageProps } from "@/lib/types/storyblok-component-types";
 import './page.scss'
 

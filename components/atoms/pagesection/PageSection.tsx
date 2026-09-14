@@ -1,6 +1,6 @@
 import './pagesection.scss'
 import { ReactNode } from 'react';
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { PageSectionProps } from '@/lib/types/storyblok-component-types';
 /**
  * Component for grouping high-level blocks on a page (example: an h2 and a card component)
